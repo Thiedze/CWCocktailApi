@@ -6,25 +6,25 @@
       {
         "id": 1,
         "ingredient_id": 1,
-        "quantaty": 4,
+        "quantity": 4,
         "unit": "CL"
       },
       {
         "id": 2,
         "ingredient_id": 3,
-        "quantaty": 2,
+        "quantity": 2,
         "unit": "CL"
       },
       {
         "id": 3,
         "ingredient_id": 4,
-        "quantaty": 2,
+        "quantity": 2,
         "unit": "CL"
       },
       {
         "id": 4,
         "ingredient_id": 5,
-        "quantaty": 1,
+        "quantity": 1,
         "unit": "BIG_CUBE"
       }
     ]
