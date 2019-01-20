@@ -15,6 +15,9 @@ public enum IngredientCategory {
   CITRUS_JUICE,
   GIN,
   ICE,
-  CRUSHED_ICE
+  CRUSHED_ICE,
+  FRUIT,
+  SUGAR,
+  CACHACA
 
 }
