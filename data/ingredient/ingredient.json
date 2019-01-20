@@ -10,5 +10,23 @@
     "name": "Bombay Sapphire",
     "producer": "The Bombay Spirits Company",
     "category": "GIN"
+  },
+  {
+    "id": 3,
+    "name": "Lemon Juice",
+    "producer": null,
+    "category": "CITRUS_JUICE"
+  },
+  {
+    "id": 4,
+    "name": "Sugar Syrup",
+    "producer": null,
+    "category": "SWEET_SYRUP"
+  },
+  {
+    "id": 5,
+    "name": "Ice",
+    "producer": null,
+    "category": "ICE"
   }
 ]
