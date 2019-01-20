@@ -28,5 +28,11 @@
     "name": "Ice",
     "producer": null,
     "category": "ICE"
+  },
+  {
+    "id": 5,
+    "name": "Wild Turkey 101 Proof",
+    "producer": "Wild Turkey Distilling",
+    "category": "WHISKEY"
   }
 ]
