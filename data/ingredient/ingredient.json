@@ -34,5 +34,29 @@
     "name": "Wild Turkey 101 Proof",
     "producer": "Wild Turkey Distilling",
     "category": "WHISKEY"
+  },
+  {
+    "id": 7,
+    "name": "Crushed Ice",
+    "producer": null,
+    "category": "CRUSHED_ICE"
+  },
+  {
+    "id": 8,
+    "name": "Cane Sugar",
+    "producer": null,
+    "category": "SUGAR"
+  },
+  {
+    "id": 9,
+    "name": "Lime",
+    "producer": null,
+    "category": "FRUIT"
+  },
+  {
+    "id": 9,
+    "name": "Pitú Premium do Brasil",
+    "producer": null,
+    "category": "CACHACA"
   }
 ]

@@ -28,5 +28,29 @@
         "unit": "BIG_CUBE"
       }
     ]
+  },
+  {
+    "id": 1,
+    "name": "Caipirinha",
+    "ingredients": [
+      {
+        "id": 1,
+        "ingredient_id": 9,
+        "quantity": 1,
+        "unit": "PIECE"
+      },
+      {
+        "id": 2,
+        "ingredient_id": 8,
+        "quantity": 3,
+        "unit": "BAR_SPOON"
+      },
+      {
+        "id": 3,
+        "ingredient_id": 7,
+        "quantity": null,
+        "unit": "FILL"
+      }
+    ]
   }
 ]
