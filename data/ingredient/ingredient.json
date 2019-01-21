@@ -32,8 +32,8 @@
   },
   {
     "id": 4,
-    "name": "Sugar Syrup",
-    "producer": null,
+    "name": "Cawsey's Sugar Syrup",
+    "producer": "Cawsey's",
     "categories": [
       "SUGAR",
       "SYRUP",
@@ -71,7 +71,7 @@
   {
     "id": 8,
     "name": "Cane Sugar",
-    "producer": null,
+    "producer": "Diamant",
     "categories": [
       "SUGAR",
       "BROWN",
@@ -130,8 +130,8 @@
   },
   {
     "id": 14,
-    "name": "Soda",
-    "producer": null,
+    "name": "Soda Water",
+    "producer": "Schweppes",
     "categories": [
       "SODA",
       "NON_ALCOHOLIC"
