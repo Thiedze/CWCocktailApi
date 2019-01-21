@@ -118,5 +118,34 @@
       "AMERICA",
       "TENNESEE"
     ]
+  },
+  {
+    "id": 12,
+    "name": "Mint Leaves",
+    "producer": null,
+    "categories": [
+      "FRUIT",
+      "MINT"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Hanava Club 3 Anos",
+    "producer": null,
+    "categories": [
+      "RUM",
+      "ALCOHOLIC",
+      "BROWN",
+      "CUBA"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Soda",
+    "producer": null,
+    "categories": [
+      "SODA",
+      "NON_ALCOHOLIC"
+    ]
   }
 ]

@@ -36,6 +36,9 @@ public enum IngredientCategory {
   BOURBON,
   SINGEL_MALT,
   BLENDED,
-  TENNESEE
+  TENNESEE,
+  MINT,
+  CUBA,
+  SODA
 
 }

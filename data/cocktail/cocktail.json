@@ -40,7 +40,7 @@
     ]
   },
   {
-    "id": 1,
+    "id": 2,
     "name": "Caipirinha",
     "ingredients": [
       {
@@ -78,6 +78,48 @@
       {
         "id": 4,
         "description": "Stir and ready"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Mojito",
+    "ingredients": [
+      {
+        "id": 1,
+        "ingredient_id": 9,
+        "quantity": 1,
+        "unit": "PIECE"
+      },
+      {
+        "id": 2,
+        "ingredient_id": 12,
+        "quantity": 6,
+        "unit": "PIECE"
+      },
+      {
+        "id": 3,
+        "ingredient_id": 13,
+        "quantity": 6,
+        "unit": "CL"
+      },
+      {
+        "id": 4,
+        "ingredient_id": 8,
+        "quantity": 2,
+        "unit": "BAR_SPOON"
+      },
+      {
+        "id": 5,
+        "ingredient_id": 14,
+        "quantity": null,
+        "unit": "FILL"
+      }
+    ],
+    "makingSteps": [
+      {
+        "id": 1,
+        "description": ""
       }
     ]
   }
