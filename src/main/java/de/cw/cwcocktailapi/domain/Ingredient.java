@@ -1,5 +1,6 @@
 package de.cw.cwcocktailapi.domain;
 
+import java.util.List;
 import lombok.Data;
 
 @Data
@@ -11,6 +12,6 @@ public class Ingredient {
 
   private String producer;
 
-  private IngredientCategory category;
+  private List<IngredientCategory> categories;
 
 }

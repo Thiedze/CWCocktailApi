@@ -40,7 +40,7 @@ public class CocktailService {
       for (CocktailIngredient cocktailIngredient : cocktail.getIngredients()) {
         cocktailIngredient.setAlternativeIngredients(ingredients.stream().filter(ingredient ->
             !cocktailIngredient.getIngredient().getId().equals(ingredient.getId()) && ingredient
-                .getCategory().equals(cocktailIngredient.getIngredient().getCategory())
+                .getCategories().containsAll(cocktailIngredient.getIngredient().getCategories())
         ).collect(Collectors.toList()));
       }
     }

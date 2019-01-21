@@ -1,5 +1,6 @@
 package de.cw.cwcocktailapi.controller.v1.dto;
 
+import java.util.List;
 import lombok.Data;
 
 @Data
@@ -11,6 +12,6 @@ public class GetIngredientDto {
 
   private String producer;
 
-  private String category;
+  private List<String> categories;
 
 }
