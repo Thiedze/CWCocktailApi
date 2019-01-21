@@ -16,8 +16,7 @@
     "producer": "The Bombay Spirits Company",
     "categories": [
       "GIN",
-      "ALCOHOLIC",
-      "ENGLAND"
+      "ALCOHOLIC"
     ]
   },
   {
@@ -144,8 +143,7 @@
     "producer": "G'VINE Villevert",
     "categories": [
       "GIN",
-      "ALCOHOLIC",
-      "FRANCE"
+      "ALCOHOLIC"
     ]
   },
   {
@@ -164,6 +162,33 @@
     "categories": [
       "FRUIT",
       "BASIL"
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Monkey 47",
+    "producer": null,
+    "categories": [
+      "GIN",
+      "ALCOHOLIC"
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Thomas Henry Tonic Water",
+    "producer": "Thomas Henry",
+    "categories": [
+      "TONIC",
+      "NON_ALCOHOLIC"
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Fever Tree Tonic Water",
+    "producer": "Fever Tree ",
+    "categories": [
+      "TONIC",
+      "NON_ALCOHOLIC"
     ]
   }
 ]

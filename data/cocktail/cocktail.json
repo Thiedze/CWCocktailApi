@@ -198,5 +198,43 @@
         "description": "The whole thing is strained by a strainer (not a simple strainer) into a whiskey or tumbler"
       }
     ]
+  },
+  {
+    "id": 5,
+    "name": "Gin Tonic",
+    "ingredients": [
+      {
+        "id": 1,
+        "ingredient_id": 18,
+        "quantity": 4,
+        "unit": "CL"
+      },
+      {
+        "id": 2,
+        "ingredient_id": 19,
+        "quantity": null,
+        "unit": "FILL"
+      },
+      {
+        "id": 3,
+        "ingredient_id": 5,
+        "quantity": "4-6",
+        "unit": "PIECE"
+      }
+    ],
+    "makingSteps": [
+      {
+        "id": 1,
+        "description": "Put some ice cubes in the glass"
+      },
+      {
+        "id": 2,
+        "description": "Add gin"
+      },
+      {
+        "id": 3,
+        "description": "Fill up with tonic water"
+      }
+    ]
   }
 ]

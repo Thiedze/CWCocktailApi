@@ -41,6 +41,7 @@ public enum IngredientCategory {
   CUBA,
   SODA,
   FRANCE,
-  BASIL
+  BASIL,
+  TONIC
 
 }
