@@ -14,7 +14,7 @@ public class CocktailIngredient {
 
   private Ingredient ingredient;
 
-  private Integer quantity;
+  private String quantity;
 
   private Unit unit;
 

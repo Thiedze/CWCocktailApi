@@ -12,7 +12,7 @@ public class GetCocktailIngredientDto {
 
   private Ingredient ingredient;
 
-  private Integer quantity;
+  private String quantity;
 
   private Unit unit;
 
