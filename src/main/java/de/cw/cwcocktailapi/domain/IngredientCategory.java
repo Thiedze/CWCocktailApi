@@ -42,6 +42,7 @@ public enum IngredientCategory {
   SODA,
   FRANCE,
   BASIL,
-  TONIC
+  TONIC,
+  GINGER_ALE
 
 }

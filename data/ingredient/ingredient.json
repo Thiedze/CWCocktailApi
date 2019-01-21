@@ -190,5 +190,24 @@
       "TONIC",
       "NON_ALCOHOLIC"
     ]
+  },
+  {
+    "id": 21,
+    "name": "Lime",
+    "producer": null,
+    "categories": [
+      "FRUIT",
+      "CITRUS",
+      "JUICE"
+    ]
+  },
+  {
+    "id": 22,
+    "name": "American Ginger Ale",
+    "producer": "Schweppes",
+    "categories": [
+      "GINGER_ALE",
+      "NON_ALCOHOLIC"
+    ]
   }
 ]

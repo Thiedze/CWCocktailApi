@@ -236,5 +236,51 @@
         "description": "Fill up with tonic water"
       }
     ]
+  },
+  {
+    "id": 6,
+    "name": "Ipanema",
+    "ingredients": [
+      {
+        "id": 1,
+        "ingredient_id": 16,
+        "quantity": 1,
+        "unit": "PIECE"
+      },
+      {
+        "id": 2,
+        "ingredient_id": 21,
+        "quantity": 2,
+        "unit": "CL"
+      },
+      {
+        "id": 3,
+        "ingredient_id": 7,
+        "quantity": 3,
+        "unit": "BAR_SPOON"
+      },
+      {
+        "id": 4,
+        "ingredient_id": 7,
+        "quantity": "2/3",
+        "unit": "FILL"
+      },
+      {
+        "id": 4,
+        "ingredient_id": 22,
+        "quantity": null,
+        "unit": "FILL"
+      }
+    ],
+    "makingSteps": [
+      {
+        "id": 1,
+        "description": "Put lime, lime juice and cane sugar to the shaker and crush it"
+      },
+      {
+        "id": 2,
+        "description": "Fill up with ginger ale and crushed ice"
+      }
+    ]
   }
 ]
