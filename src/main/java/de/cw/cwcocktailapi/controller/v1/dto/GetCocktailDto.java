@@ -12,4 +12,5 @@ public class GetCocktailDto {
 
   private List<GetCocktailIngredientDto> ingredients;
 
+  private List<GetMakingStepDto> makingSteps;
 }
