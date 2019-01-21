@@ -140,5 +140,63 @@
         "description": "Stir and ready"
       }
     ]
+  },
+  {
+    "id": 4,
+    "name": "Gin Basil Smash",
+    "ingredients": [
+      {
+        "id": 1,
+        "ingredient_id": 15,
+        "quantity": 6,
+        "unit": "CL"
+      },
+      {
+        "id": 2,
+        "ingredient_id": 16,
+        "quantity": "1/2",
+        "unit": "PIECE"
+      },
+      {
+        "id": 3,
+        "ingredient_id": 4,
+        "quantity": 2,
+        "unit": "CL"
+      },
+      {
+        "id": 4,
+        "ingredient_id": 17,
+        "quantity": 10,
+        "unit": "PIECE"
+      },
+      {
+        "id": 5,
+        "ingredient_id": 5,
+        "quantity": 1,
+        "unit": "BIG_CUBE"
+      }
+    ],
+    "makingSteps": [
+      {
+        "id": 1,
+        "description": "Add basil leaves and half a lemon to the shaker"
+      },
+      {
+        "id": 2,
+        "description": "Squeeze really strong with muddler"
+      },
+      {
+        "id": 3,
+        "description": "Add sugar syrup and ice cubes"
+      },
+      {
+        "id": 4,
+        "description": "Shake everything vigorously"
+      },
+      {
+        "id": 5,
+        "description": "The whole thing is strained by a strainer (not a simple strainer) into a whiskey or tumbler"
+      }
+    ]
   }
 ]

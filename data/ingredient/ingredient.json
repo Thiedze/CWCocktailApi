@@ -137,5 +137,33 @@
       "SODA",
       "NON_ALCOHOLIC"
     ]
+  },
+  {
+    "id": 15,
+    "name": "G-Vine Floraison",
+    "producer": "G'VINE Villevert",
+    "categories": [
+      "GIN",
+      "ALCOHOLIC",
+      "FRANCE"
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Lemon",
+    "producer": null,
+    "categories": [
+      "FRUIT",
+      "CITRUS"
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Basil Leaves",
+    "producer": null,
+    "categories": [
+      "FRUIT",
+      "BASIL"
+    ]
   }
 ]

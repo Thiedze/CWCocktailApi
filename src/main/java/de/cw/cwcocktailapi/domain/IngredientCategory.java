@@ -39,6 +39,8 @@ public enum IngredientCategory {
   TENNESEE,
   MINT,
   CUBA,
-  SODA
+  SODA,
+  FRANCE,
+  BASIL
 
 }
