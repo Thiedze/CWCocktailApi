@@ -111,14 +111,14 @@
       },
       {
         "id": 5,
-        "ingredient_id": 14,
-        "quantity": null,
+        "ingredient_id": 7,
+        "quantity": "2/3",
         "unit": "FILL"
       },
       {
         "id": 6,
-        "ingredient_id": 7,
-        "quantity": "2/3",
+        "ingredient_id": 14,
+        "quantity": null,
         "unit": "FILL"
       }
     ],
