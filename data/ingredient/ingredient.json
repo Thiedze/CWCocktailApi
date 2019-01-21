@@ -6,7 +6,8 @@
     "categories": [
       "WHISKEY",
       "ALCOHOLIC",
-      "AMERICA"
+      "AMERICA",
+      "BOURBON"
     ]
   },
   {
@@ -55,7 +56,8 @@
     "categories": [
       "WHISKEY",
       "AMERICA",
-      "ALCOHOLIC"
+      "ALCOHOLIC",
+      "BOURBON"
     ]
   },
   {
@@ -102,7 +104,19 @@
     "categories": [
       "WHISKEY",
       "ALCOHOLIC",
-      "AMERICA"
+      "AMERICA",
+      "BOURBON"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "George Dickel No.8",
+    "producer": "George Dickel Distilling",
+    "categories": [
+      "WHISKEY",
+      "ALCOHOLIC",
+      "AMERICA",
+      "TENNESEE"
     ]
   }
 ]

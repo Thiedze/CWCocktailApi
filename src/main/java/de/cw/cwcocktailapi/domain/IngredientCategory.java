@@ -32,6 +32,10 @@ public enum IngredientCategory {
   GERMANY,
   ENGLAND,
   SOUR,
-  BRASIL
+  BRASIL,
+  BOURBON,
+  SINGEL_MALT,
+  BLENDED,
+  TENNESEE
 
 }
