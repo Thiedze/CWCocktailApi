@@ -114,12 +114,30 @@
         "ingredient_id": 14,
         "quantity": null,
         "unit": "FILL"
+      },
+      {
+        "id": 6,
+        "ingredient_id": 7,
+        "quantity": "2/3",
+        "unit": "FILL"
       }
     ],
     "makingSteps": [
       {
         "id": 1,
-        "description": ""
+        "description": "Dice the lime and crush with cane sugar"
+      },
+      {
+        "id": 2,
+        "description": "Briefly press mint leaves"
+      },
+      {
+        "id": 3,
+        "description": "Add the remaining ingredients"
+      },
+      {
+        "id": 4,
+        "description": "Stir and ready"
       }
     ]
   }
