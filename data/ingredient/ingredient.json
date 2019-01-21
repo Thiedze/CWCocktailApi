@@ -3,60 +3,96 @@
     "id": 1,
     "name": "Makers Mark",
     "producer": "Maker's Mark Distillery",
-    "categories": "WHISKEY,ALCOHOLIC,AMERICA"
+    "categories": [
+      "WHISKEY",
+      "ALCOHOLIC",
+      "AMERICA"
+    ]
   },
   {
     "id": 2,
     "name": "Bombay Sapphire",
     "producer": "The Bombay Spirits Company",
-    "categories": "GIN,ALCOHOL,ENGLAND"
+    "categories": [
+      "GIN",
+      "ALCOHOL",
+      "ENGLAND"
+    ]
   },
   {
     "id": 3,
     "name": "Lemon Juice",
     "producer": null,
-    "categories": "JUICE,CITRUS,SOUR,NON_ALCOHOLIC"
+    "categories": [
+      "JUICE",
+      "CITRUS",
+      "SOUR",
+      "NON_ALCOHOLIC"
+    ]
   },
   {
     "id": 4,
     "name": "Sugar Syrup",
     "producer": null,
-    "categories": "SUGAR,SYRUP,NON_ALCOHOLIC"
+    "categories": [
+      "SUGAR",
+      "SYRUP",
+      "NON_ALCOHOLIC"
+    ]
   },
   {
     "id": 5,
     "name": "Ice",
     "producer": null,
-    "categories": "ICE"
+    "categories": [
+      "ICE"
+    ]
   },
   {
     "id": 6,
     "name": "Wild Turkey 101 Proof",
     "producer": "Wild Turkey Distilling",
-    "categories": "WHISKEY,AMERICA,ALCOHOLIC"
+    "categories": [
+      "WHISKEY",
+      "AMERICA",
+      "ALCOHOLIC"
+    ]
   },
   {
     "id": 7,
     "name": "Crushed Ice",
     "producer": null,
-    "categories": "ICE,CRUSHED"
+    "categories": [
+      "ICE",
+      "CRUSHED"
+    ]
   },
   {
     "id": 8,
     "name": "Cane Sugar",
     "producer": null,
-    "categories": "SUGAR,BROWN,NON_ALCOHOLIC"
+    "categories": [
+      "SUGAR",
+      "BROWN",
+      "NON_ALCOHOLIC"
+    ]
   },
   {
     "id": 9,
     "name": "Lime",
     "producer": null,
-    "categories": "FRUIT"
+    "categories": [
+      "FRUIT"
+    ]
   },
   {
     "id": 9,
     "name": "Pitú Premium do Brasil",
     "producer": null,
-    "categories": "CACHACA,ALCOHOLIC,BRASIL"
+    "categories": [
+      "CACHACA",
+      "ALCOHOLIC",
+      "BRASIL"
+    ]
   }
 ]
