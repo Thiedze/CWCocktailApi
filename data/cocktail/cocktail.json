@@ -27,6 +27,16 @@
         "quantity": 1,
         "unit": "BIG_CUBE"
       }
+    ],
+    "makingSteps": [
+      {
+        "id": 1,
+        "description": "Shake all ingredients vigorously on ice"
+      },
+      {
+        "id": 2,
+        "description": "Strain into the glass"
+      }
     ]
   },
   {
@@ -50,6 +60,24 @@
         "ingredient_id": 7,
         "quantity": null,
         "unit": "FILL"
+      }
+    ],
+    "makingSteps": [
+      {
+        "id": 1,
+        "description": "Dice the lime and crush with cane sugar"
+      },
+      {
+        "id": 2,
+        "description": "Fill the glas with crushed ice"
+      },
+      {
+        "id": 3,
+        "description": "Add the remaining ingredients"
+      },
+      {
+        "id": 4,
+        "description": "Stir and ready"
       }
     ]
   }
