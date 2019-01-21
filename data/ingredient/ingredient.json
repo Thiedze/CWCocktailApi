@@ -94,5 +94,15 @@
       "ALCOHOLIC",
       "BRASIL"
     ]
+  },
+  {
+    "id": 10,
+    "name": "Bourbon Whiskey",
+    "producer": null,
+    "categories": [
+      "WHISKEY",
+      "ALCOHOLIC",
+      "AMERICA"
+    ]
   }
 ]

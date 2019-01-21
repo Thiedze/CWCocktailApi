@@ -5,7 +5,7 @@
     "ingredients": [
       {
         "id": 1,
-        "ingredient_id": 1,
+        "ingredient_id": 10,
         "quantity": 4,
         "unit": "CL"
       },
