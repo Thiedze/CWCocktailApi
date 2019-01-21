@@ -99,17 +99,6 @@
     ]
   },
   {
-    "id": 10,
-    "name": "Bourbon Whiskey",
-    "producer": null,
-    "categories": [
-      "WHISKEY",
-      "ALCOHOLIC",
-      "AMERICA",
-      "BOURBON"
-    ]
-  },
-  {
     "id": 11,
     "name": "George Dickel No.8",
     "producer": "George Dickel Distilling",
