@@ -83,7 +83,7 @@
     "producer": null,
     "categories": [
       "FRUIT",
-      "CITRUS"
+      "LIME"
     ]
   },
   {
@@ -112,7 +112,6 @@
     "name": "Mint Leaves",
     "producer": null,
     "categories": [
-      "FRUIT",
       "MINT"
     ]
   },
@@ -160,7 +159,6 @@
     "name": "Basil Leaves",
     "producer": null,
     "categories": [
-      "FRUIT",
       "BASIL"
     ]
   },
@@ -185,7 +183,7 @@
   {
     "id": 20,
     "name": "Fever Tree Tonic Water",
-    "producer": "Fever Tree ",
+    "producer": "Fever Tree",
     "categories": [
       "TONIC",
       "NON_ALCOHOLIC"
@@ -196,7 +194,6 @@
     "name": "Lime",
     "producer": null,
     "categories": [
-      "FRUIT",
       "CITRUS",
       "JUICE"
     ]
@@ -208,6 +205,54 @@
     "categories": [
       "GINGER_ALE",
       "NON_ALCOHOLIC"
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Blue Curacao",
+    "producer": "Bols",
+    "categories": [
+      "LIQUEUR",
+      "ALCOHOLIC",
+      "ORANGE"
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Case Vieja Anejo",
+    "producer": "Casa Vieja",
+    "categories": [
+      "TEQUILA",
+      "ALCOHOLIC",
+      "SILVER"
+    ]
+  },
+  {
+    "id": 25,
+    "name": "Cointreau",
+    "producer": "Cointreau",
+    "categories": [
+      "LIQUEUR",
+      "ALCOHOLIC",
+      "ORANGE"
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Strawberry",
+    "producer": "Happy Day",
+    "categories": [
+      "STRAWBERRY",
+      "JUICE"
+    ]
+  },
+  {
+    "id": 27,
+    "name": "Strawberry",
+    "producer": "Etter",
+    "categories": [
+      "STRAWBERRY",
+      "LIQUEUR"
     ]
   }
 ]

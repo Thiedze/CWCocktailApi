@@ -282,5 +282,51 @@
         "description": "Fill up with ginger ale and crushed ice"
       }
     ]
+  },
+  {
+    "id": 7,
+    "name": "Strawberry Margarita",
+    "ingredients": [
+      {
+        "id": 1,
+        "ingredient_id": 24,
+        "quantity": 4,
+        "unit": "CL"
+      },
+      {
+        "id": 2,
+        "ingredient_id": 25,
+        "quantity": 2,
+        "unit": "CL"
+      },
+      {
+        "id": 3,
+        "ingredient_id": 21,
+        "quantity": 1,
+        "unit": "CL"
+      },
+      {
+        "id": 4,
+        "ingredient_id": 26,
+        "quantity": 1,
+        "unit": "CL"
+      },
+      {
+        "id": 5,
+        "ingredient_id": 5,
+        "quantity": "4-6",
+        "unit": "CUBE"
+      }
+    ],
+    "makingSteps": [
+      {
+        "id": 1,
+        "description": "Shake the ingredients together with some ice cubes"
+      },
+      {
+        "id": 2,
+        "description": "Strain into the glass"
+      }
+    ]
   }
 ]

@@ -43,6 +43,11 @@ public enum IngredientCategory {
   FRANCE,
   BASIL,
   TONIC,
-  GINGER_ALE
+  GINGER_ALE,
+  ORANGE,
+  TEQUILA,
+  SILVER,
+  STRAWBERRY,
+  LIME
 
 }
