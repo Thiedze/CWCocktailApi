@@ -6,7 +6,7 @@ public enum Unit {
   CL,
   L,
   BAR_SPOON,
-  CUBES,
+  CUBE,
   BIG_CUBE,
   PIECE,
   FILL

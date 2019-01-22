@@ -219,7 +219,7 @@
         "id": 3,
         "ingredient_id": 5,
         "quantity": "4-6",
-        "unit": "PIECE"
+        "unit": "CUBE"
       }
     ],
     "makingSteps": [
