@@ -13,4 +13,6 @@ public class GetCocktailDto {
   private List<GetCocktailIngredientDto> ingredients;
 
   private List<GetMakingStepDto> makingSteps;
+
+  private String imageUrl;
 }

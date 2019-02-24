@@ -16,4 +16,6 @@ public class Ingredient {
 
   private List<IngredientCategory> categories;
 
+  private String imageUrl;
+
 }

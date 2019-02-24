@@ -25,7 +25,10 @@ public class CocktailService {
   @Autowired
   private IngredientService ingredientService;
 
-  private void setAndGetCocktailIngredients(List<Cocktail> cocktails,
+  @Autowired
+  private ImageService imageService;
+
+  private void getAndSetCocktailIngredients(List<Cocktail> cocktails,
       List<Ingredient> ingredients) {
     for (Cocktail cocktail : cocktails) {
       for (CocktailIngredient cocktailIngredient : cocktail.getIngredients()) {
@@ -39,7 +42,7 @@ public class CocktailService {
     }
   }
 
-  private void setAndGetAlternativeCocktailIngredients(List<Cocktail> cocktails,
+  private void getAndSetAlternativeCocktailIngredients(List<Cocktail> cocktails,
       List<Ingredient> ingredients) {
     for (Cocktail cocktail : cocktails) {
       for (CocktailIngredient cocktailIngredient : cocktail.getIngredients()) {
@@ -86,11 +89,18 @@ public class CocktailService {
     return sort(filterCocktailsByCategories(getCocktails(), categories, missingCategories));
   }
 
+  private void getAndSetImageUrls(List<Cocktail> cocktails) {
+    for (Cocktail cocktail : cocktails) {
+      cocktail.setImageUrl(imageService.getUrl(cocktail.getName()));
+    }
+  }
+
   private List<Cocktail> getCocktails() throws IOException {
     List<Cocktail> cocktails = cocktailDao.getCocktails();
     List<Ingredient> ingredients = ingredientService.getIngredients();
-    setAndGetCocktailIngredients(cocktails, ingredients);
-    setAndGetAlternativeCocktailIngredients(cocktails, ingredients);
+    getAndSetCocktailIngredients(cocktails, ingredients);
+    getAndSetAlternativeCocktailIngredients(cocktails, ingredients);
+    getAndSetImageUrls(cocktails);
     return cocktails;
   }
 

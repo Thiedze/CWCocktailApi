@@ -14,4 +14,6 @@ public class GetIngredientDto {
 
   private List<String> categories;
 
+  private String imageUrl;
+
 }

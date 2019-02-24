@@ -15,4 +15,7 @@ public class Cocktail {
   private List<CocktailIngredient> ingredients;
 
   private List<MakingStep> makingSteps;
+
+  private String imageUrl;
+  
 }
