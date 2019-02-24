@@ -6,6 +6,7 @@ import de.cw.cwcocktailapi.service.IngredientService;
 import java.io.IOException;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,6 +22,12 @@ public class IngredientGetControllerV1 {
   public List<GetIngredientDto> getIngredients() throws IOException {
     return IngredientMapper.INSTANCE
         .ingredientsToGetIngredientDtos(ingredientService.getIngredients());
+  }
+
+  @RequestMapping(value = "/ingredients/{ingredientId}")
+  public GetIngredientDto getIngredient(@PathVariable Long ingredientId) throws IOException {
+    return IngredientMapper.INSTANCE
+        .ingredientToGetIngredientDto(ingredientService.getIngredient(ingredientId));
   }
 
 }

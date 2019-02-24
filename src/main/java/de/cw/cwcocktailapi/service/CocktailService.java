@@ -1,5 +1,6 @@
 package de.cw.cwcocktailapi.service;
 
+import de.cw.cwcocktailapi.comparator.CocktailComparator;
 import de.cw.cwcocktailapi.dao.CocktailDao;
 import de.cw.cwcocktailapi.domain.Cocktail;
 import de.cw.cwcocktailapi.domain.CocktailIngredient;
@@ -52,28 +53,37 @@ public class CocktailService {
 
   private List<Cocktail> filterCocktailsByCategories(List<Cocktail> cocktails,
       List<IngredientCategory> filterCategories, Integer missingCategories) {
-    Set<Cocktail> filteredCocktails = new HashSet<>();
-    for (Cocktail cocktail : cocktails) {
-      Integer countFitCategories = 0;
-      for (CocktailIngredient ingredient : cocktail.getIngredients()) {
-        for (IngredientCategory category : ingredient.getIngredient().getCategories()) {
-          for (IngredientCategory filterCategory : filterCategories) {
-            if (filterCategory.equals(category)) {
-              countFitCategories += 1;
+    if (filterCategories != null && !filterCategories.isEmpty()) {
+      Set<Cocktail> filteredCocktails = new HashSet<>();
+      for (Cocktail cocktail : cocktails) {
+        int countFitCategories = 0;
+        for (CocktailIngredient ingredient : cocktail.getIngredients()) {
+          for (IngredientCategory category : ingredient.getIngredient().getCategories()) {
+            for (IngredientCategory filterCategory : filterCategories) {
+              if (filterCategory.equals(category)) {
+                countFitCategories += 1;
+              }
             }
           }
         }
+        if (countFitCategories >= filterCategories.size() - missingCategories) {
+          filteredCocktails.add(cocktail);
+        }
       }
-      if (countFitCategories.equals(filterCategories.size() - missingCategories)) {
-        filteredCocktails.add(cocktail);
-      }
+      return new ArrayList<>(filteredCocktails);
+    } else {
+      return cocktails;
     }
-    return new ArrayList<>(filteredCocktails);
+  }
+
+  private List<Cocktail> sort(List<Cocktail> cocktails) {
+    cocktails.sort(new CocktailComparator());
+    return cocktails;
   }
 
   public List<Cocktail> getCocktails(List<IngredientCategory> categories,
       Integer missingCategories) throws IOException {
-    return filterCocktailsByCategories(getCocktails(), categories, missingCategories);
+    return sort(filterCocktailsByCategories(getCocktails(), categories, missingCategories));
   }
 
   private List<Cocktail> getCocktails() throws IOException {
