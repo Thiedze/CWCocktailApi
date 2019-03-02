@@ -12,7 +12,7 @@ public class ImageDao {
   public String getUrl(String searchQuery) {
     RestTemplate restTemplate = new RestTemplate();
     String url =
-        "https://api.qwant.com/api/search/images?count=1&t=images&safesearch=1&locale=en_US&uiv= 4&q="
+        "https://api.qwant.com/api/search/images?count=1&t=images&safesearch=1&locale=en_US&uiv=4&q="
             + searchQuery;
     ResponseEntity<SearchResponseDto> response = restTemplate
         .getForEntity(url, SearchResponseDto.class);

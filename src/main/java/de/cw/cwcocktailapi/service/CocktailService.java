@@ -100,7 +100,6 @@ public class CocktailService {
     List<Ingredient> ingredients = ingredientService.getIngredients();
     getAndSetCocktailIngredients(cocktails, ingredients);
     getAndSetAlternativeCocktailIngredients(cocktails, ingredients);
-    getAndSetImageUrls(cocktails);
     return cocktails;
   }
 
