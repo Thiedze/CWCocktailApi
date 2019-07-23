@@ -328,5 +328,153 @@
         "description": "Strain into the glass"
       }
     ]
+  },
+  {
+    "id": 8,
+    "name": "Negroni",
+    "ingredients": [
+      {
+        "id": 1,
+        "ingredient_id": 15,
+        "quantity": 3,
+        "unit": "CL"
+      },
+      {
+        "id": 2,
+        "ingredient_id": 28,
+        "quantity": 3,
+        "unit": "CL"
+      },
+      {
+        "id": 3,
+        "ingredient_id": 29,
+        "quantity": 3,
+        "unit": "CL"
+      }
+    ],
+    "makingSteps": [
+      {
+        "id": 1,
+        "description": "Stir all ingredients over a large ice cube in a rocks glass"
+      },
+      {
+        "id": 2,
+        "description": "Garnish with a lemon and an orange zest"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Agavoni",
+    "ingredients": [
+      {
+        "id": 1,
+        "ingredient_id": 24,
+        "quantity": 3,
+        "unit": "CL"
+      },
+      {
+        "id": 2,
+        "ingredient_id": 28,
+        "quantity": 3,
+        "unit": "CL"
+      },
+      {
+        "id": 3,
+        "ingredient_id": 29,
+        "quantity": 3,
+        "unit": "CL"
+      }
+    ],
+    "makingSteps": [
+      {
+        "id": 1,
+        "description": "Stir all ingredients over a large ice cube in a rocks glass"
+      },
+      {
+        "id": 2,
+        "description": "Garnish with a lemon and an orange zest"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Manhattan Cocktail",
+    "ingredients": [
+      {
+        "id": 1,
+        "ingredient_id": 6,
+        "quantity": 6,
+        "unit": "CL"
+      },
+      {
+        "id": 2,
+        "ingredient_id": 29,
+        "quantity": 3,
+        "unit": "CL"
+      },
+      {
+        "id": 3,
+        "ingredient_id": 30,
+        "quantity": 1,
+        "unit": "Dash"
+      },
+      {
+        "id": 4,
+        "ingredient_id": 31,
+        "quantity": 1,
+        "unit": "Dash"
+      }
+    ],
+    "makingSteps": [
+      {
+        "id": 1,
+        "description": "Shake all ingredients over ice"
+      },
+      {
+        "id": 2,
+        "description": "Strain into a coupette glass"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Martinez",
+    "ingredients": [
+      {
+        "id": 1,
+        "ingredient_id": 32,
+        "quantity": 3,
+        "unit": "CL"
+      },
+      {
+        "id": 2,
+        "ingredient_id": 29,
+        "quantity": 6,
+        "unit": "CL"
+      },
+      {
+        "id": 3,
+        "ingredient_id": 33,
+        "quantity": 0.5,
+        "unit": "CL"
+      },
+      {
+        "id": 4,
+        "ingredient_id": 30,
+        "quantity": 1,
+        "unit": "Dash"
+      }
+    ],
+    "makingSteps": [
+      {
+        "id": 1,
+        "description": "Stir all ingredients over ice"
+      },
+      {
+        "id": 2,
+        "description": "Strain into a coupette glass"
+      }
+    ]
   }
 ]

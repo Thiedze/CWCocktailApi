@@ -254,5 +254,53 @@
       "STRAWBERRY",
       "LIQUEUR"
     ]
+  },
+  {
+    "id": 28,
+    "name": "Campari",
+    "producer": "Davide Campari-Milano",
+    "categories": [
+      "LIQUEUR"
+    ]
+  },
+  {
+    "id": 29,
+    "name": "Carpano Antica Formula",
+    "producer": "Fratelli Branca Distillerie S.r.l.",
+    "categories": [
+      "SWEET_VERMOUTH"
+    ]
+  },
+  {
+    "id": 30,
+    "name": "Angostura Bitter",
+    "producer": "Angostura",
+    "categories": [
+      "COCKTAIL_BITTER"
+    ]
+  },
+  {
+    "id": 31,
+    "name": "Angostura Orange Bitter",
+    "producer": "Angostura",
+    "categories": [
+      "COCKTAIL_BITTER"
+    ]
+  },
+  {
+    "id": 32,
+    "name": "Hayman's Old Tom Gin",
+    "producer": "Hayman´s Destillery",
+    "categories": [
+      "OLD_TOM_GIN"
+    ]
+  },
+  {
+    "id": 33,
+    "name": "Luxardo Maraschino",
+    "producer": "Luxardo",
+    "categories": [
+      "MARASCHINO"
+    ]
   }
 ]
