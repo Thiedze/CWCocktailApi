@@ -9,6 +9,7 @@ public enum Unit {
   CUBE,
   BIG_CUBE,
   PIECE,
-  FILL
+  FILL,
+  DASH
 
 }

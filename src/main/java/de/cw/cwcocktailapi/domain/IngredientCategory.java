@@ -48,6 +48,10 @@ public enum IngredientCategory {
   TEQUILA,
   SILVER,
   STRAWBERRY,
-  LIME
+  LIME,
+  SWEET_VERMOUTH,
+  COCKTAIL_BITTER,
+  OLD_TOM_GIN,
+  MARASCHINO
 
 }
