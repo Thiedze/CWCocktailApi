@@ -1,7 +1,6 @@
 package de.cw.cwcocktailapi.controller.v1.controller;
 
-import de.cw.cwcocktailapi.controller.v1.dto.GetCocktailDto;
-import de.cw.cwcocktailapi.controller.v1.mapper.CocktailMapper;
+import de.cw.cwcocktailapi.controller.v1.dto.CocktailDto;
 import de.cw.cwcocktailapi.domain.IngredientCategory;
 import de.cw.cwcocktailapi.service.CocktailService;
 import java.io.IOException;
@@ -15,24 +14,25 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "/v1", method = RequestMethod.GET)
-public class CocktailGetControllerV1 {
+public class CocktailControllerV1 {
 
   @Autowired
   private CocktailService cocktailService;
 
   @RequestMapping(value = "/cocktails")
-  public List<GetCocktailDto> getCocktails(
+  public List<CocktailDto> getCocktails(
       @RequestParam(name = "category", required = false) List<IngredientCategory> categories,
-      @RequestParam(required = false, defaultValue = "0") Integer missingCategories)
-      throws IOException {
-    return CocktailMapper.INSTANCE
-        .cocktailsToGetCocktailDtos(cocktailService.getCocktails(categories, missingCategories));
+      @RequestParam(required = false, defaultValue = "0") Integer missingCategories) throws IOException {
+    /*return CocktailMapper.INSTANCE
+        .cocktailsToGetCocktailDtos(cocktailService.getCocktails(categories, missingCategories));*/
+    return null;
   }
 
   @RequestMapping(value = "/cocktails/{cocktailId}")
-  public GetCocktailDto getCocktail(@PathVariable Long cocktailId) throws IOException {
-    return CocktailMapper.INSTANCE
-        .cocktailToGetCocktailDto(cocktailService.getCocktail(cocktailId));
+  public CocktailDto getCocktail(@PathVariable Long cocktailId) throws IOException {
+    /*return CocktailMapper.INSTANCE
+        .cocktailToGetCocktailDto(cocktailService.getCocktail(cocktailId));*/
+    return null;
   }
 
 }

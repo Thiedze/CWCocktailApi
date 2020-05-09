@@ -1,6 +1,6 @@
 package de.cw.cwcocktailapi.controller.v1.mapper;
 
-import de.cw.cwcocktailapi.controller.v1.dto.GetIngredientDto;
+import de.cw.cwcocktailapi.controller.v1.dto.IngredientDto;
 import de.cw.cwcocktailapi.domain.Ingredient;
 import java.util.List;
 import org.mapstruct.Mapper;
@@ -11,8 +11,8 @@ public interface IngredientMapper {
 
   IngredientMapper INSTANCE = Mappers.getMapper(IngredientMapper.class);
 
-  GetIngredientDto ingredientToGetIngredientDto(Ingredient ingredient);
+  IngredientDto ingredientToGetIngredientDto(Ingredient ingredient);
 
-  List<GetIngredientDto> ingredientsToGetIngredientDtos(List<Ingredient> ingredients);
+  List<IngredientDto> ingredientsToGetIngredientDtos(List<Ingredient> ingredients);
 
 }

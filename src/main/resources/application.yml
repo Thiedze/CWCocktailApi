@@ -1,0 +1,15 @@
+git:
+  data:
+    url: https://raw.githubusercontent.com/Thiedze/CWCocktailApi/master/data
+datasource:
+  url: jdbc:mysql://sql343.your-server.de:3306/cocktail?serverTimezone=Europe/Berlin
+  username: cocktail
+  password: N8wEC1K83dW4nZKY
+  driver-class-name: com.mysql.cj.jdbc.Driver
+  ddl-auto: create
+logging:
+  level:
+    org:
+      springframework.web: DEBUG
+      hibernate: DEBUG
+      hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl: ERROR

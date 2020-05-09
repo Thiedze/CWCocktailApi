@@ -1,25 +1,11 @@
 package de.cw.cwcocktailapi.service;
 
-import de.cw.cwcocktailapi.comparator.CocktailComparator;
-import de.cw.cwcocktailapi.dao.CocktailDao;
-import de.cw.cwcocktailapi.domain.Cocktail;
-import de.cw.cwcocktailapi.domain.CocktailIngredient;
-import de.cw.cwcocktailapi.domain.Ingredient;
-import de.cw.cwcocktailapi.domain.IngredientCategory;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
 public class CocktailService {
 
-  @Autowired
+/*  @Autowired
   private CocktailDao cocktailDao;
 
   @Autowired
@@ -111,6 +97,6 @@ public class CocktailService {
       }
     }
     throw new ResourceNotFoundException();
-  }
+  }*/
 
 }

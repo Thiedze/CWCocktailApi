@@ -6,7 +6,7 @@ import java.util.List;
 import lombok.Data;
 
 @Data
-public class GetCocktailIngredientDto {
+public class CocktailIngredientDto {
 
   private Long id;
 
@@ -16,6 +16,6 @@ public class GetCocktailIngredientDto {
 
   private Unit unit;
 
-  private List<GetIngredientDto> alternativeIngredients;
+  private List<IngredientDto> alternativeIngredients;
 
 }

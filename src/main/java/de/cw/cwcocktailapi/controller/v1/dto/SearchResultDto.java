@@ -1,12 +1,13 @@
-package de.cw.cwcocktailapi.dao.domain;
+package de.cw.cwcocktailapi.controller.v1.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import java.util.List;
 import lombok.Data;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class SearchDataDto {
+public class SearchResultDto {
 
-  private SearchResultDto result;
+  private List<SearchItemDto> items;
 
 }

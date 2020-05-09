@@ -4,15 +4,15 @@ import java.util.List;
 import lombok.Data;
 
 @Data
-public class GetCocktailDto {
+public class CocktailDto {
 
   private Long id;
 
   private String name;
 
-  private List<GetCocktailIngredientDto> ingredients;
+  private List<CocktailIngredientDto> ingredients;
 
-  private List<GetMakingStepDto> makingSteps;
+  private List<MakingStepDto> makingSteps;
 
   private String imageUrl;
 }

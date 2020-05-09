@@ -4,7 +4,7 @@ import java.util.List;
 import lombok.Data;
 
 @Data
-public class GetIngredientDto {
+public class IngredientDto {
 
   private Long id;
 
