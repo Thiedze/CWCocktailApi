@@ -33,7 +33,7 @@ public class GitService {
     this.cocktailIngredientRepository = cocktailIngredientRepository;
     this.makingStepRepository = makingStepRepository;
     this.cocktailRepository = cocktailRepository;
-    this.saveToDatabase();
+    // this.saveToDatabase();
   }
 
   private void saveCocktails() throws IOException {

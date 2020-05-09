@@ -1,42 +1,41 @@
 package de.cw.cwcocktailapi.service;
 
+import de.cw.cwcocktailapi.comparator.CocktailComparator;
+import de.cw.cwcocktailapi.domain.Cocktail;
+import de.cw.cwcocktailapi.domain.CocktailIngredient;
+import de.cw.cwcocktailapi.domain.Ingredient;
+import de.cw.cwcocktailapi.domain.IngredientCategory;
+import de.cw.cwcocktailapi.repository.CocktailRepository;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Optional;
+import java.util.Set;
+import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 
 @Service
 public class CocktailService {
 
-/*  @Autowired
-  private CocktailDao cocktailDao;
+  private final CocktailRepository cocktailRepository;
 
-  @Autowired
-  private IngredientService ingredientService;
+  private final IngredientService ingredientService;
 
-  @Autowired
-  private ImageService imageService;
+  private final ImageService imageService;
 
-  private void getAndSetCocktailIngredients(List<Cocktail> cocktails,
-      List<Ingredient> ingredients) {
-    for (Cocktail cocktail : cocktails) {
-      for (CocktailIngredient cocktailIngredient : cocktail.getIngredients()) {
-        for (Ingredient ingredient : ingredients) {
-          if (cocktailIngredient.getIngredient_id().equals(ingredient.getId())) {
-            cocktailIngredient.setIngredient(ingredient);
-            break;
-          }
-        }
-      }
-    }
+  public CocktailService(CocktailRepository cocktailRepository, IngredientService ingredientService,
+      ImageService imageService) {
+    this.cocktailRepository = cocktailRepository;
+    this.ingredientService = ingredientService;
+    this.imageService = imageService;
   }
 
-  private void getAndSetAlternativeCocktailIngredients(List<Cocktail> cocktails,
-      List<Ingredient> ingredients) {
-    for (Cocktail cocktail : cocktails) {
-      for (CocktailIngredient cocktailIngredient : cocktail.getIngredients()) {
-        cocktailIngredient.setAlternativeIngredients(ingredients.stream().filter(ingredient ->
-            !cocktailIngredient.getIngredient().getId().equals(ingredient.getId()) && ingredient
-                .getCategories().containsAll(cocktailIngredient.getIngredient().getCategories())
-        ).collect(Collectors.toList()));
-      }
+  private void getAndSetAlternativeCocktailIngredients(Cocktail cocktail, List<Ingredient> ingredients) {
+    for (CocktailIngredient cocktailIngredient : cocktail.getIngredients()) {
+      cocktailIngredient.setAlternativeIngredients(ingredients.stream().filter(
+          ingredient -> !cocktailIngredient.getIngredient().getId().equals(ingredient.getId()) && ingredient
+              .getCategories().containsAll(cocktailIngredient.getIngredient().getCategories()))
+          .collect(Collectors.toList()));
     }
   }
 
@@ -70,33 +69,43 @@ public class CocktailService {
     return cocktails;
   }
 
-  public List<Cocktail> getCocktails(List<IngredientCategory> categories,
-      Integer missingCategories) throws IOException {
+  public List<Cocktail> getCocktails(List<IngredientCategory> categories, Integer missingCategories) {
     return sort(filterCocktailsByCategories(getCocktails(), categories, missingCategories));
   }
 
-  private void getAndSetImageUrls(List<Cocktail> cocktails) {
+  private void addAdditionalInformations(List<Cocktail> cocktails) {
+    List<Ingredient> ingredients = ingredientService.getIngredients();
     for (Cocktail cocktail : cocktails) {
-      cocktail.setImageUrl(imageService.getUrl(cocktail.getName()));
+      getAndSetImageUrl(cocktail);
+      getAndSetAlternativeCocktailIngredients(cocktail, ingredients);
     }
   }
 
-  private List<Cocktail> getCocktails() throws IOException {
-    List<Cocktail> cocktails = cocktailDao.getCocktails();
+  private void addAdditionalInformation(Cocktail cocktail) {
     List<Ingredient> ingredients = ingredientService.getIngredients();
-    getAndSetCocktailIngredients(cocktails, ingredients);
-    getAndSetAlternativeCocktailIngredients(cocktails, ingredients);
+    getAndSetImageUrl(cocktail);
+    getAndSetAlternativeCocktailIngredients(cocktail, ingredients);
+  }
+
+  private void getAndSetImageUrl(Cocktail cocktail) {
+    cocktail.setImageUrl(imageService.getUrl(cocktail.getName()));
+  }
+
+  private List<Cocktail> getCocktails() {
+    List<Cocktail> cocktails = cocktailRepository.findAll();
+    addAdditionalInformations(cocktails);
     return cocktails;
   }
 
-  public Cocktail getCocktail(Long cocktailId) throws IOException {
-    List<Cocktail> cocktails = getCocktails();
-    for (Cocktail cocktail : cocktails) {
-      if (cocktail.getId().equals(cocktailId)) {
-        return cocktail;
-      }
+  public Cocktail getCocktail(Long cocktailId) {
+    Optional<Cocktail> cocktailOptional = cocktailRepository.findById(cocktailId);
+    if (cocktailOptional.isPresent()) {
+      Cocktail cocktail = cocktailOptional.get();
+      addAdditionalInformation(cocktail);
+      return cocktail;
+    } else {
+      return null;
     }
-    throw new ResourceNotFoundException();
-  }*/
+  }
 
 }

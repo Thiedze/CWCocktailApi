@@ -1,26 +1,27 @@
 package de.cw.cwcocktailapi.service;
 
+import de.cw.cwcocktailapi.comparator.IngredientComparator;
+import de.cw.cwcocktailapi.domain.Ingredient;
+import de.cw.cwcocktailapi.repository.IngredientRepository;
+import java.util.List;
 import org.springframework.stereotype.Service;
 
 @Service
 public class IngredientService {
 
-  /*@Autowired
-  private IngredientDao ingredientDao;
+  private final IngredientRepository ingredientRepository;
 
-  public List<Ingredient> getIngredients() throws IOException {
-    List<Ingredient> ingredients = ingredientDao.getIngredients();
+  public IngredientService(IngredientRepository ingredientRepository) {
+    this.ingredientRepository = ingredientRepository;
+  }
+
+  public List<Ingredient> getIngredients() {
+    List<Ingredient> ingredients = ingredientRepository.findAll();
     ingredients.sort(new IngredientComparator());
     return ingredients;
   }
 
-  public Ingredient getIngredient(Long ingredientId) throws IOException {
-    List<Ingredient> ingredients = ingredientDao.getIngredients();
-    for (Ingredient ingredient : ingredients) {
-      if (ingredient.getId().equals(ingredientId)) {
-        return ingredient;
-      }
-    }
-    throw new ResourceNotFoundException();
-  }*/
+  public Ingredient getIngredient(Long ingredientId) {
+    return ingredientRepository.getOne(ingredientId);
+  }
 }

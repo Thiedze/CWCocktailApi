@@ -38,7 +38,7 @@ public class JpaConfiguration {
     factoryBean.setPackagesToScan("de.cw.cwcocktailapi.domain");
     factoryBean.setDataSource(dataSource);
     Properties jpaProperties = new Properties();
-    jpaProperties.setProperty("hibernate.hbm2ddl.auto", "create-drop");
+    jpaProperties.setProperty("hibernate.hbm2ddl.auto", "validate");
     factoryBean.setJpaProperties(jpaProperties);
     factoryBean.afterPropertiesSet();
     return factoryBean.getObject();
