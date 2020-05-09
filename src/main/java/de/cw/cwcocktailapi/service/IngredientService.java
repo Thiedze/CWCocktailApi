@@ -4,6 +4,7 @@ import de.cw.cwcocktailapi.comparator.IngredientComparator;
 import de.cw.cwcocktailapi.domain.Ingredient;
 import de.cw.cwcocktailapi.repository.IngredientRepository;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -22,6 +23,7 @@ public class IngredientService {
   }
 
   public Ingredient getIngredient(Long ingredientId) {
-    return ingredientRepository.getOne(ingredientId);
+    Optional<Ingredient> ingredientOptional = ingredientRepository.findById(ingredientId);
+    return ingredientOptional.orElse(null);
   }
 }
