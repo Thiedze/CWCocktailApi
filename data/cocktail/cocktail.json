@@ -417,13 +417,13 @@
         "id": 3,
         "ingredient_id": 30,
         "quantity": 1,
-        "unit": "Dash"
+        "unit": "DASH"
       },
       {
         "id": 4,
         "ingredient_id": 31,
         "quantity": 1,
-        "unit": "Dash"
+        "unit": "DASH"
       }
     ],
     "makingSteps": [
@@ -463,7 +463,7 @@
         "id": 4,
         "ingredient_id": 30,
         "quantity": 1,
-        "unit": "Dash"
+        "unit": "DASH"
       }
     ],
     "makingSteps": [
