@@ -1,28 +1,23 @@
 [
   {
-    "id": 1,
     "name": "Whiskey Sour",
     "ingredients": [
       {
-        "id": 1,
         "ingredient_id": 1,
         "quantity": 4,
         "unit": "CL"
       },
       {
-        "id": 2,
         "ingredient_id": 3,
         "quantity": 2,
         "unit": "CL"
       },
       {
-        "id": 3,
         "ingredient_id": 4,
         "quantity": 2,
         "unit": "CL"
       },
       {
-        "id": 4,
         "ingredient_id": 5,
         "quantity": 1,
         "unit": "BIG_CUBE"
@@ -30,33 +25,27 @@
     ],
     "makingSteps": [
       {
-        "id": 1,
         "description": "Shake all ingredients vigorously on ice"
       },
       {
-        "id": 2,
         "description": "Strain into the glass"
       }
     ]
   },
   {
-    "id": 2,
     "name": "Caipirinha",
     "ingredients": [
       {
-        "id": 1,
         "ingredient_id": 9,
         "quantity": 1,
         "unit": "PIECE"
       },
       {
-        "id": 2,
         "ingredient_id": 8,
         "quantity": 3,
         "unit": "BAR_SPOON"
       },
       {
-        "id": 3,
         "ingredient_id": 7,
         "quantity": null,
         "unit": "FILL"
@@ -64,59 +53,48 @@
     ],
     "makingSteps": [
       {
-        "id": 1,
         "description": "Dice the lime and crush with cane sugar"
       },
       {
-        "id": 2,
         "description": "Fill the glas with crushed ice"
       },
       {
-        "id": 3,
         "description": "Add the remaining ingredients"
       },
       {
-        "id": 4,
         "description": "Stir and ready"
       }
     ]
   },
   {
-    "id": 3,
     "name": "Mojito",
     "ingredients": [
       {
-        "id": 1,
         "ingredient_id": 9,
         "quantity": 1,
         "unit": "PIECE"
       },
       {
-        "id": 2,
         "ingredient_id": 12,
         "quantity": 6,
         "unit": "PIECE"
       },
       {
-        "id": 3,
         "ingredient_id": 13,
         "quantity": 6,
         "unit": "CL"
       },
       {
-        "id": 4,
         "ingredient_id": 8,
         "quantity": 2,
         "unit": "BAR_SPOON"
       },
       {
-        "id": 5,
         "ingredient_id": 7,
         "quantity": "2/3",
         "unit": "FILL"
       },
       {
-        "id": 6,
         "ingredient_id": 14,
         "quantity": null,
         "unit": "FILL"
@@ -124,53 +102,43 @@
     ],
     "makingSteps": [
       {
-        "id": 1,
         "description": "Dice the lime and crush with cane sugar"
       },
       {
-        "id": 2,
         "description": "Briefly press mint leaves"
       },
       {
-        "id": 3,
         "description": "Add the remaining ingredients"
       },
       {
-        "id": 4,
         "description": "Stir and ready"
       }
     ]
   },
   {
-    "id": 4,
     "name": "Gin Basil Smash",
     "ingredients": [
       {
-        "id": 1,
         "ingredient_id": 15,
         "quantity": 6,
         "unit": "CL"
       },
       {
-        "id": 2,
         "ingredient_id": 16,
         "quantity": "1/2",
         "unit": "PIECE"
       },
       {
-        "id": 3,
         "ingredient_id": 4,
         "quantity": 2,
         "unit": "CL"
       },
       {
-        "id": 4,
         "ingredient_id": 17,
         "quantity": 10,
         "unit": "PIECE"
       },
       {
-        "id": 5,
         "ingredient_id": 5,
         "quantity": 1,
         "unit": "BIG_CUBE"
@@ -178,45 +146,36 @@
     ],
     "makingSteps": [
       {
-        "id": 1,
         "description": "Add basil leaves and half a lemon to the shaker"
       },
       {
-        "id": 2,
         "description": "Squeeze really strong with muddler"
       },
       {
-        "id": 3,
         "description": "Add sugar syrup and ice cubes"
       },
       {
-        "id": 4,
         "description": "Shake everything vigorously"
       },
       {
-        "id": 5,
         "description": "The whole thing is strained by a strainer (not a simple strainer) into a whiskey or tumbler"
       }
     ]
   },
   {
-    "id": 5,
     "name": "Gin Tonic",
     "ingredients": [
       {
-        "id": 1,
         "ingredient_id": 18,
         "quantity": 4,
         "unit": "CL"
       },
       {
-        "id": 2,
         "ingredient_id": 19,
         "quantity": null,
         "unit": "FILL"
       },
       {
-        "id": 3,
         "ingredient_id": 5,
         "quantity": "4-6",
         "unit": "CUBE"
@@ -224,49 +183,40 @@
     ],
     "makingSteps": [
       {
-        "id": 1,
         "description": "Put some ice cubes in the glass"
       },
       {
-        "id": 2,
         "description": "Add gin"
       },
       {
-        "id": 3,
         "description": "Fill up with tonic water"
       }
     ]
   },
   {
-    "id": 6,
     "name": "Ipanema",
     "ingredients": [
       {
-        "id": 1,
         "ingredient_id": 9,
         "quantity": 1,
         "unit": "PIECE"
       },
       {
-        "id": 2,
         "ingredient_id": 21,
         "quantity": 2,
         "unit": "CL"
       },
       {
-        "id": 3,
         "ingredient_id": 8,
         "quantity": 3,
         "unit": "BAR_SPOON"
       },
       {
-        "id": 4,
         "ingredient_id": 7,
         "quantity": "2/3",
         "unit": "FILL"
       },
       {
-        "id": 4,
         "ingredient_id": 22,
         "quantity": null,
         "unit": "FILL"
@@ -274,45 +224,37 @@
     ],
     "makingSteps": [
       {
-        "id": 1,
         "description": "Put lime, lime juice and cane sugar to the shaker and crush it"
       },
       {
-        "id": 2,
         "description": "Fill up with ginger ale and crushed ice"
       }
     ]
   },
   {
-    "id": 7,
     "name": "Strawberry Margarita",
     "ingredients": [
       {
-        "id": 1,
         "ingredient_id": 24,
         "quantity": 4,
         "unit": "CL"
       },
       {
-        "id": 2,
         "ingredient_id": 25,
         "quantity": 2,
         "unit": "CL"
       },
       {
-        "id": 3,
         "ingredient_id": 21,
         "quantity": 1,
         "unit": "CL"
       },
       {
-        "id": 4,
         "ingredient_id": 26,
         "quantity": 1,
         "unit": "CL"
       },
       {
-        "id": 5,
         "ingredient_id": 5,
         "quantity": "4-6",
         "unit": "CUBE"
@@ -320,33 +262,27 @@
     ],
     "makingSteps": [
       {
-        "id": 1,
         "description": "Shake the ingredients together with some ice cubes"
       },
       {
-        "id": 2,
         "description": "Strain into the glass"
       }
     ]
   },
   {
-    "id": 8,
     "name": "Negroni",
     "ingredients": [
       {
-        "id": 1,
         "ingredient_id": 15,
         "quantity": 3,
         "unit": "CL"
       },
       {
-        "id": 2,
         "ingredient_id": 28,
         "quantity": 3,
         "unit": "CL"
       },
       {
-        "id": 3,
         "ingredient_id": 29,
         "quantity": 3,
         "unit": "CL"
@@ -354,33 +290,27 @@
     ],
     "makingSteps": [
       {
-        "id": 1,
         "description": "Stir all ingredients over a large ice cube in a rocks glass"
       },
       {
-        "id": 2,
         "description": "Garnish with a lemon and an orange zest"
       }
     ]
   },
   {
-    "id": 9,
     "name": "Agavoni",
     "ingredients": [
       {
-        "id": 1,
         "ingredient_id": 24,
         "quantity": 3,
         "unit": "CL"
       },
       {
-        "id": 2,
         "ingredient_id": 28,
         "quantity": 3,
         "unit": "CL"
       },
       {
-        "id": 3,
         "ingredient_id": 29,
         "quantity": 3,
         "unit": "CL"
@@ -388,39 +318,32 @@
     ],
     "makingSteps": [
       {
-        "id": 1,
         "description": "Stir all ingredients over a large ice cube in a rocks glass"
       },
       {
-        "id": 2,
         "description": "Garnish with a lemon and an orange zest"
       }
     ]
   },
   {
-    "id": 10,
     "name": "Manhattan Cocktail",
     "ingredients": [
       {
-        "id": 1,
         "ingredient_id": 6,
         "quantity": 6,
         "unit": "CL"
       },
       {
-        "id": 2,
         "ingredient_id": 29,
         "quantity": 3,
         "unit": "CL"
       },
       {
-        "id": 3,
         "ingredient_id": 30,
         "quantity": 1,
         "unit": "DASH"
       },
       {
-        "id": 4,
         "ingredient_id": 31,
         "quantity": 1,
         "unit": "DASH"
@@ -428,39 +351,32 @@
     ],
     "makingSteps": [
       {
-        "id": 1,
         "description": "Shake all ingredients over ice"
       },
       {
-        "id": 2,
         "description": "Strain into a coupette glass"
       }
     ]
   },
   {
-    "id": 11,
     "name": "Martinez",
     "ingredients": [
       {
-        "id": 1,
         "ingredient_id": 32,
         "quantity": 3,
         "unit": "CL"
       },
       {
-        "id": 2,
         "ingredient_id": 29,
         "quantity": 6,
         "unit": "CL"
       },
       {
-        "id": 3,
         "ingredient_id": 33,
         "quantity": 0.5,
         "unit": "CL"
       },
       {
-        "id": 4,
         "ingredient_id": 30,
         "quantity": 1,
         "unit": "DASH"
@@ -468,11 +384,9 @@
     ],
     "makingSteps": [
       {
-        "id": 1,
         "description": "Stir all ingredients over ice"
       },
       {
-        "id": 2,
         "description": "Strain into a coupette glass"
       }
     ]
