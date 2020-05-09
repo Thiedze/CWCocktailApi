@@ -3,22 +3,22 @@
     "name": "Whiskey Sour",
     "ingredients": [
       {
-        "ingredient_id": 1,
+        "ingredient": 1,
         "quantity": 4,
         "unit": "CL"
       },
       {
-        "ingredient_id": 3,
+        "ingredient": 3,
         "quantity": 2,
         "unit": "CL"
       },
       {
-        "ingredient_id": 4,
+        "ingredient": 4,
         "quantity": 2,
         "unit": "CL"
       },
       {
-        "ingredient_id": 5,
+        "ingredient": 5,
         "quantity": 1,
         "unit": "BIG_CUBE"
       }
@@ -36,17 +36,17 @@
     "name": "Caipirinha",
     "ingredients": [
       {
-        "ingredient_id": 9,
+        "ingredient": 9,
         "quantity": 1,
         "unit": "PIECE"
       },
       {
-        "ingredient_id": 8,
+        "ingredient": 8,
         "quantity": 3,
         "unit": "BAR_SPOON"
       },
       {
-        "ingredient_id": 7,
+        "ingredient": 7,
         "quantity": null,
         "unit": "FILL"
       }
@@ -70,32 +70,32 @@
     "name": "Mojito",
     "ingredients": [
       {
-        "ingredient_id": 9,
+        "ingredient": 9,
         "quantity": 1,
         "unit": "PIECE"
       },
       {
-        "ingredient_id": 12,
+        "ingredient": 12,
         "quantity": 6,
         "unit": "PIECE"
       },
       {
-        "ingredient_id": 13,
+        "ingredient": 13,
         "quantity": 6,
         "unit": "CL"
       },
       {
-        "ingredient_id": 8,
+        "ingredient": 8,
         "quantity": 2,
         "unit": "BAR_SPOON"
       },
       {
-        "ingredient_id": 7,
+        "ingredient": 7,
         "quantity": "2/3",
         "unit": "FILL"
       },
       {
-        "ingredient_id": 14,
+        "ingredient": 14,
         "quantity": null,
         "unit": "FILL"
       }
@@ -119,27 +119,27 @@
     "name": "Gin Basil Smash",
     "ingredients": [
       {
-        "ingredient_id": 15,
+        "ingredient": 15,
         "quantity": 6,
         "unit": "CL"
       },
       {
-        "ingredient_id": 16,
+        "ingredient": 16,
         "quantity": "1/2",
         "unit": "PIECE"
       },
       {
-        "ingredient_id": 4,
+        "ingredient": 4,
         "quantity": 2,
         "unit": "CL"
       },
       {
-        "ingredient_id": 17,
+        "ingredient": 17,
         "quantity": 10,
         "unit": "PIECE"
       },
       {
-        "ingredient_id": 5,
+        "ingredient": 5,
         "quantity": 1,
         "unit": "BIG_CUBE"
       }
@@ -166,17 +166,17 @@
     "name": "Gin Tonic",
     "ingredients": [
       {
-        "ingredient_id": 18,
+        "ingredient": 18,
         "quantity": 4,
         "unit": "CL"
       },
       {
-        "ingredient_id": 19,
+        "ingredient": 19,
         "quantity": null,
         "unit": "FILL"
       },
       {
-        "ingredient_id": 5,
+        "ingredient": 5,
         "quantity": "4-6",
         "unit": "CUBE"
       }
@@ -197,27 +197,27 @@
     "name": "Ipanema",
     "ingredients": [
       {
-        "ingredient_id": 9,
+        "ingredient": 9,
         "quantity": 1,
         "unit": "PIECE"
       },
       {
-        "ingredient_id": 21,
+        "ingredient": 21,
         "quantity": 2,
         "unit": "CL"
       },
       {
-        "ingredient_id": 8,
+        "ingredient": 8,
         "quantity": 3,
         "unit": "BAR_SPOON"
       },
       {
-        "ingredient_id": 7,
+        "ingredient": 7,
         "quantity": "2/3",
         "unit": "FILL"
       },
       {
-        "ingredient_id": 22,
+        "ingredient": 22,
         "quantity": null,
         "unit": "FILL"
       }
@@ -235,27 +235,27 @@
     "name": "Strawberry Margarita",
     "ingredients": [
       {
-        "ingredient_id": 24,
+        "ingredient": 24,
         "quantity": 4,
         "unit": "CL"
       },
       {
-        "ingredient_id": 25,
+        "ingredient": 25,
         "quantity": 2,
         "unit": "CL"
       },
       {
-        "ingredient_id": 21,
+        "ingredient": 21,
         "quantity": 1,
         "unit": "CL"
       },
       {
-        "ingredient_id": 26,
+        "ingredient": 26,
         "quantity": 1,
         "unit": "CL"
       },
       {
-        "ingredient_id": 5,
+        "ingredient": 5,
         "quantity": "4-6",
         "unit": "CUBE"
       }
@@ -273,17 +273,17 @@
     "name": "Negroni",
     "ingredients": [
       {
-        "ingredient_id": 15,
+        "ingredient": 15,
         "quantity": 3,
         "unit": "CL"
       },
       {
-        "ingredient_id": 28,
+        "ingredient": 28,
         "quantity": 3,
         "unit": "CL"
       },
       {
-        "ingredient_id": 29,
+        "ingredient": 29,
         "quantity": 3,
         "unit": "CL"
       }
@@ -301,17 +301,17 @@
     "name": "Agavoni",
     "ingredients": [
       {
-        "ingredient_id": 24,
+        "ingredient": 24,
         "quantity": 3,
         "unit": "CL"
       },
       {
-        "ingredient_id": 28,
+        "ingredient": 28,
         "quantity": 3,
         "unit": "CL"
       },
       {
-        "ingredient_id": 29,
+        "ingredient": 29,
         "quantity": 3,
         "unit": "CL"
       }
@@ -329,22 +329,22 @@
     "name": "Manhattan Cocktail",
     "ingredients": [
       {
-        "ingredient_id": 6,
+        "ingredient": 6,
         "quantity": 6,
         "unit": "CL"
       },
       {
-        "ingredient_id": 29,
+        "ingredient": 29,
         "quantity": 3,
         "unit": "CL"
       },
       {
-        "ingredient_id": 30,
+        "ingredient": 30,
         "quantity": 1,
         "unit": "DASH"
       },
       {
-        "ingredient_id": 31,
+        "ingredient": 31,
         "quantity": 1,
         "unit": "DASH"
       }
@@ -362,22 +362,22 @@
     "name": "Martinez",
     "ingredients": [
       {
-        "ingredient_id": 32,
+        "ingredient": 32,
         "quantity": 3,
         "unit": "CL"
       },
       {
-        "ingredient_id": 29,
+        "ingredient": 29,
         "quantity": 6,
         "unit": "CL"
       },
       {
-        "ingredient_id": 33,
+        "ingredient": 33,
         "quantity": 0.5,
         "unit": "CL"
       },
       {
-        "ingredient_id": 30,
+        "ingredient": 30,
         "quantity": 1,
         "unit": "DASH"
       }
