@@ -27,13 +27,15 @@ public class DatabaseFillerService {
 
   public DatabaseFillerService(JsonService jsonService, IngredientRepository ingredientRepository,
       CocktailIngredientRepository cocktailIngredientRepository, MakingStepRepository makingStepRepository,
-      CocktailRepository cocktailRepository) throws IOException {
+      CocktailRepository cocktailRepository, Boolean doFillDatabase) throws IOException {
     this.jsonService = jsonService;
     this.ingredientRepository = ingredientRepository;
     this.cocktailIngredientRepository = cocktailIngredientRepository;
     this.makingStepRepository = makingStepRepository;
     this.cocktailRepository = cocktailRepository;
-    // this.saveToDatabase();
+    if (doFillDatabase) {
+      this.saveToDatabase();
+    }
   }
 
   private void saveCocktails() throws IOException {

@@ -1,34 +1,32 @@
 package de.cw.cwcocktailapi.domain;
 
-import java.util.Collection;
+import javax.persistence.Basic;
 import javax.persistence.Column;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "ingredient")
-public class Ingredient {
+@Table(name = "image")
+public class Image {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "ingredient_id")
+  @Column(name = "image_id")
   private Long id;
 
-  private String name;
+  @Lob
+  @Basic(fetch = FetchType.LAZY)
+  private byte[] raw;
 
-  private String producer;
+  private String filename;
 
-  @OneToOne
-  private Image image;
-
-  @ElementCollection
-  private Collection<IngredientCategory> categories;
+  private String extension;
 
 }

@@ -6,6 +6,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
@@ -26,6 +27,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableAutoConfiguration
 public class JpaConfiguration {
 
+  @Value("${git.data.filldatabase}")
+  private Boolean doFillDatabase;
+
   @Primary
   @Bean(name = "entityManagerFactory")
   public EntityManagerFactory entityManagerFactory(@Qualifier("dataSource") DataSource dataSource) {
@@ -38,8 +42,11 @@ public class JpaConfiguration {
     factoryBean.setPackagesToScan("de.cw.cwcocktailapi.domain");
     factoryBean.setDataSource(dataSource);
     Properties jpaProperties = new Properties();
-    // jpaProperties.setProperty("hibernate.hbm2ddl.auto", "create");
-    jpaProperties.setProperty("hibernate.hbm2ddl.auto", "validate");
+    if (doFillDatabase) {
+      jpaProperties.setProperty("hibernate.hbm2ddl.auto", "create");
+    } else {
+      jpaProperties.setProperty("hibernate.hbm2ddl.auto", "validate");
+    }
     factoryBean.setJpaProperties(jpaProperties);
     factoryBean.afterPropertiesSet();
     return factoryBean.getObject();
@@ -63,4 +70,10 @@ public class JpaConfiguration {
   public DataSource dataSource() {
     return DataSourceBuilder.create().type(BasicDataSource.class).build();
   }
+
+  @Bean
+  public Boolean doFillDatabase() {
+    return doFillDatabase;
+  }
+
 }
