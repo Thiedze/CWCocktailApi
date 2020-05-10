@@ -5,7 +5,7 @@ git:
 datasource:
   url: jdbc:mysql://sql343.your-server.de:3306/cocktail?serverTimezone=Europe/Berlin
   username: cocktail
-  password: N8wEC1K83dW4nZKY
+  password:
   driver-class-name: com.mysql.cj.jdbc.Driver
   ddl-auto: create
 logging:
