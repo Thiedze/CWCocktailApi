@@ -31,14 +31,13 @@ public class Cocktail {
   private GlassType glassType;
 
   @OneToOne
+  @JoinColumn(name = "image_id")
   private Image image;
 
-  @OneToMany(cascade = CascadeType.ALL)
-  @JoinColumn(name = "cocktail_id")
+  @OneToMany(cascade = CascadeType.ALL, mappedBy = "cocktail")
   private List<CocktailIngredient> ingredients;
 
-  @OneToMany(cascade = CascadeType.ALL)
-  @JoinColumn(name = "cocktail_id")
+  @OneToMany(cascade = CascadeType.ALL, mappedBy = "cocktail")
   private List<MakingStep> makingSteps;
 
 }
