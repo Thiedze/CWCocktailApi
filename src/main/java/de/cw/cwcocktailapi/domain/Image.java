@@ -1,7 +1,6 @@
 package de.cw.cwcocktailapi.domain;
 
 import javax.persistence.Basic;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -18,7 +17,6 @@ public class Image {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "image_id")
   private Long id;
 
   @Lob

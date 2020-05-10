@@ -1,13 +1,14 @@
 package de.cw.cwcocktailapi.domain;
 
-import java.util.Collection;
-import javax.persistence.Column;
-import javax.persistence.ElementCollection;
+import java.time.LocalDate;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import lombok.Data;
@@ -19,18 +20,26 @@ public class Ingredient {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "ingredient_id")
   private Long id;
 
   private String name;
 
   private String producer;
 
+  private String description;
+
+  private LocalDate created;
+
+  private LocalDate updated;
+
   @OneToOne
-  @JoinColumn(name = "image_id")
   private Image image;
 
-  @ElementCollection
-  private Collection<IngredientCategory> categories;
+  @OneToOne
+  private Rating rating;
+
+  @ManyToMany
+  @JoinTable(name = "ingredient_ingredient_category", joinColumns = @JoinColumn(name = "ingredient_id"), inverseJoinColumns = @JoinColumn(name = "ingredient_category_id"))
+  private List<IngredientCategory> categories;
 
 }

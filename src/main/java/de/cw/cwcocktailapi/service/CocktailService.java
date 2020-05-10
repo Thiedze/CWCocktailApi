@@ -44,7 +44,7 @@ public class CocktailService {
         for (CocktailIngredient ingredient : cocktail.getIngredients()) {
           for (IngredientCategory category : ingredient.getIngredient().getCategories()) {
             for (IngredientCategory filterCategory : filterCategories) {
-              if (filterCategory.equals(category)) {
+              if (filterCategory.getType().equals(category.getType())) {
                 countFitCategories += 1;
               }
             }

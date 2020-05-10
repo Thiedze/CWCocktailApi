@@ -1,11 +1,9 @@
 package de.cw.cwcocktailapi.domain;
 
+import java.time.LocalDate;
 import java.util.List;
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -22,17 +20,28 @@ public class Cocktail {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "cocktail_id")
   private Long id;
 
   private String name;
 
-  @Enumerated(EnumType.STRING)
-  private GlassType glassType;
+  private String description;
+
+  private LocalDate created;
+
+  private LocalDate updated;
 
   @OneToOne
-  @JoinColumn(name = "image_id")
+  private Glass glass;
+
+  @OneToOne
   private Image image;
+
+  @OneToOne
+  private Rating rating;
+
+  @OneToOne
+  @JoinColumn(name = "cocktail_category_id")
+  private CocktailCategory category;
 
   @OneToMany(cascade = CascadeType.ALL, mappedBy = "cocktail")
   private List<CocktailIngredient> ingredients;

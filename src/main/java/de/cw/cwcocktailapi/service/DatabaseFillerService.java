@@ -34,7 +34,7 @@ public class DatabaseFillerService {
     this.makingStepRepository = makingStepRepository;
     this.cocktailRepository = cocktailRepository;
     if (doFillDatabase) {
-      this.saveToDatabase();
+      // this.saveToDatabase();
     }
   }
 
