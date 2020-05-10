@@ -1,0 +1,343 @@
+openapi: 3.0.0
+info:
+  title: CWCocktailAPI
+  description: CWCocktailAPI
+  version: 0.0.0.1
+servers:
+  - url: 'https://github.com/Thiedze/CWCocktailApi'
+paths:
+  /cocktails:
+    get:
+      tags:
+        - cocktail
+      summary: List of all cocktails
+      responses:
+        200:
+          description: |-
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cocktails'
+    post:
+      tags:
+        - cocktail
+      summary: Add a new cocktail
+      requestBody:
+        $ref: '#/components/requestBodies/cocktail'
+      responses:
+        200:
+          description: |-
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cocktail'
+        409:
+          description: Cocktail with this name already exist
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cocktail'
+  /cocktails/{cocktailId}:
+    get:
+      tags:
+        - cocktail
+      summary: Get a cocktail by id
+      parameters:
+        - $ref: '#/components/parameters/cocktailId'
+      responses:
+        200:
+          description: |-
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cocktail'
+    put:
+      tags:
+        - cocktail
+      summary: Update a cocktail
+      parameters:
+        - $ref: '#/components/parameters/cocktailId'
+      responses:
+        200:
+          description: |-
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cocktail'
+  /cocktails/{cocktailId}/glass:
+    get:
+      tags:
+        - glass
+      summary: Get the glass for the cocktail
+      parameters:
+        - $ref: '#/components/parameters/cocktailId'
+      responses:
+        200:
+          description: |-
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Glass'
+        204:
+          description: Cocktail has no glass defined
+    post:
+      tags:
+        - glass
+      summary: Add a glass to a cocktail
+      requestBody:
+        $ref: '#/components/requestBodies/addGlass'
+      responses:
+        200:
+          description: Glass successfully added
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Glass'
+        412:
+          description: There is already a glass defined
+    put:
+      tags:
+        - glass
+      summary: Update the cocktail glass
+      requestBody:
+        $ref: '#/components/requestBodies/addGlass'
+      responses:
+        200:
+          description: |-
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Glass'
+        406:
+          description: Undefined glass type
+  /glasses:
+    get:
+      tags:
+        - glass
+      summary: Get a list of all glasses
+      responses:
+        200:
+          description: |-
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Glasses'
+    post:
+      tags:
+        - glass
+      summary: Add a new glass
+      requestBody:
+        $ref: '#/components/requestBodies/createGlass'
+      responses:
+        200:
+          description: |-
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Glass'
+        409:
+          description: Glas already exist
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Glass'
+
+
+components:
+  schemas:
+    Cocktails:
+      type: array
+      items:
+        $ref: '#/components/schemas/Cocktail'
+    Cocktail:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/Id'
+        name:
+          type: string
+          example:
+            Whiskey Sour
+        description:
+          type: string
+          example: There’s a simple structure behind all sours, a family of citrus-based cocktails.
+        created:
+          $ref: '#/components/schemas/DateTime'
+        updated:
+          $ref: '#/components/schemas/DateTime'
+        glass:
+          $ref: '#/components/schemas/Glass'
+        image:
+          $ref: '#/components/schemas/Image'
+        rating:
+          $ref: '#/components/schemas/Rating'
+        category:
+          $ref: '#/components/schemas/CocktailCategory'
+        ingredients:
+          $ref: '#/components/schemas/CocktailIngredients'
+        makingSteps:
+          $ref: '#/components/schemas/MakingSteps'
+    DateTime:
+      type: string
+      format: date-time
+      example: 2020-03-01 23:42:09
+    Glass:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/Id'
+        type:
+          $ref: '#/components/schemas/GlassType'
+    Image:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/Id'
+        raw:
+          $ref: '#/components/schemas/StringBase64'
+        filename:
+          type: string
+        extension:
+          type: string
+    Rating:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/Id'
+        stars:
+          type: integer
+        description:
+          type: string
+    CocktailCategory:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/Id'
+        type:
+          type: string
+    CocktailIngredients:
+      type: array
+      items:
+        $ref: '#/components/schemas/CocktailIngredient'
+    CocktailIngredient:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/Id'
+        quantity:
+          type: string
+        created:
+          $ref: '#/components/schemas/DateTime'
+        updated:
+          $ref: '#/components/schemas/DateTime'
+        unit:
+          $ref: '#/components/schemas/Unit'
+        ingredient:
+          $ref: '#/components/schemas/Ingredient'
+        alternativeIngredients:
+          $ref: '#/components/schemas/Ingredients'
+    Unit:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/Id'
+        type:
+          type: string
+    StringBase64:
+      type: string
+      format: byte
+    Ingredients:
+      type: array
+      items:
+        $ref: '#/components/schemas/Ingredient'
+    Ingredient:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/Id'
+        name:
+          type: string
+        producer:
+          type: string
+        description:
+          type: string
+        created:
+          $ref: '#/components/schemas/DateTime'
+        updated:
+          $ref: '#/components/schemas/DateTime'
+        image:
+          $ref: '#/components/schemas/Image'
+        rating:
+          $ref: '#/components/schemas/Rating'
+        categories:
+          $ref: '#/components/schemas/IngredientCategories'
+    IngredientCategories:
+      type: array
+      items:
+        $ref: '#/components/schemas/IngredientCategory'
+    IngredientCategory:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/Id'
+        type:
+          type: string
+    MakingSteps:
+      type: array
+      items:
+        $ref: '#/components/schemas/MakingStep'
+    MakingStep:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/Id'
+        description:
+          type: string
+        position:
+          type: integer
+        created:
+          $ref: '#/components/schemas/DateTime'
+        updated:
+          $ref: '#/components/schemas/DateTime'
+        language:
+          type: string
+    Id:
+      type: integer
+      format: int64
+      example: 42
+    Glasses:
+      type: array
+      items:
+        $ref: '#/components/schemas/Glass'
+    GlassType:
+      type: string
+      example: HIGHBALL
+  parameters:
+    cocktailId:
+      name: cocktailId
+      in: path
+      description: Unique id of a cocktail
+      required: true
+      schema:
+        $ref: '#/components/schemas/Id'
+  requestBodies:
+    addGlass:
+      content:
+        application/json:
+          schema:
+            properties:
+              id:
+                $ref: '#/components/schemas/Id'
+    createGlass:
+      content:
+        application/json:
+          schema:
+            properties:
+              type:
+                $ref: '#/components/schemas/GlassType'
+    cocktail:
+tags:
+  - name: cocktail
+    description: Cocktail
+  - name: glass
+    description: Glass
