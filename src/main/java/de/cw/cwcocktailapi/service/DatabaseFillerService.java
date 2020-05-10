@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @DependsOn("dataSource")
-public class GitService {
+public class DatabaseFillerService {
 
   public final JsonService jsonService;
 
@@ -25,7 +25,7 @@ public class GitService {
 
   public final CocktailRepository cocktailRepository;
 
-  public GitService(JsonService jsonService, IngredientRepository ingredientRepository,
+  public DatabaseFillerService(JsonService jsonService, IngredientRepository ingredientRepository,
       CocktailIngredientRepository cocktailIngredientRepository, MakingStepRepository makingStepRepository,
       CocktailRepository cocktailRepository) throws IOException {
     this.jsonService = jsonService;

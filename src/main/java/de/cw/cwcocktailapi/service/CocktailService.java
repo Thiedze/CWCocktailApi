@@ -21,13 +21,9 @@ public class CocktailService {
 
   private final IngredientService ingredientService;
 
-  private final ImageService imageService;
-
-  public CocktailService(CocktailRepository cocktailRepository, IngredientService ingredientService,
-      ImageService imageService) {
+  public CocktailService(CocktailRepository cocktailRepository, IngredientService ingredientService) {
     this.cocktailRepository = cocktailRepository;
     this.ingredientService = ingredientService;
-    this.imageService = imageService;
   }
 
   private void getAndSetAlternativeCocktailIngredients(Cocktail cocktail, List<Ingredient> ingredients) {
@@ -76,19 +72,13 @@ public class CocktailService {
   private void addAdditionalInformations(List<Cocktail> cocktails) {
     List<Ingredient> ingredients = ingredientService.getIngredients();
     for (Cocktail cocktail : cocktails) {
-      getAndSetImageUrl(cocktail);
       getAndSetAlternativeCocktailIngredients(cocktail, ingredients);
     }
   }
 
   private void addAdditionalInformation(Cocktail cocktail) {
     List<Ingredient> ingredients = ingredientService.getIngredients();
-    getAndSetImageUrl(cocktail);
     getAndSetAlternativeCocktailIngredients(cocktail, ingredients);
-  }
-
-  private void getAndSetImageUrl(Cocktail cocktail) {
-    cocktail.setImageUrl(imageService.getUrl(cocktail.getName()));
   }
 
   private List<Cocktail> getCocktails() {

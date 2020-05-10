@@ -10,6 +10,6 @@ datasource:
 logging:
   level:
     org:
-      springframework.web: DEBUG
-      hibernate: DEBUG
+      springframework.web: INFO
+      hibernate: INFO
       hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl: ERROR

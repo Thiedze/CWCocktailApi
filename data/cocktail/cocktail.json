@@ -1,6 +1,7 @@
 [
   {
     "name": "Whiskey Sour",
+    "imageUrl": "",
     "ingredients": [
       {
         "ingredient_id": 1,
