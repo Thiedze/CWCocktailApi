@@ -1,16 +1,32 @@
 openapi: 3.0.0
 info:
   title: CWCocktailAPI
-  description: CWCocktailAPI
+  description:
+    <span>This is the specification of an open source cocktail api.</span>
+    <br>
+    <br>
+    <h4>Every getter is free to use.</h4>
+    <br>
+    <span>New cocktails are added by the owner at the moment. Feel free to propose a new cocktail via a github comment.</span>
+    <br>
+    <br>
+    <span>In a future release it could be possible that other user can add cocktails.</span> <br>
   version: 0.0.0.1
-servers:
-  - url: ''
 paths:
   /cocktails:
     get:
       tags:
         - cocktail
-      summary: List of all cocktails
+      summary: List of all cocktails. Filter are possible.
+      parameters:
+        - $ref: '#/components/parameters/filterCocktailsByNames'
+        - $ref: '#/components/parameters/filterCocktailsByCategories'
+        - $ref: '#/components/parameters/filterCocktailsByIngredients'
+        - $ref: '#/components/parameters/filterCocktailsByIngredientCategories'
+        - $ref: '#/components/parameters/filterCocktailsByRatingGte'
+        - $ref: '#/components/parameters/filterCocktailsByRatingLte'
+        - $ref: '#/components/parameters/filterCocktailsByGlass'
+        - $ref: '#/components/parameters/randomCocktails'
       responses:
         200:
           description: |-
@@ -18,32 +34,25 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Cocktails'
-    post:
-      tags:
-        - cocktail
-      summary: Add a new cocktail
-      requestBody:
-        $ref: '#/components/requestBodies/createCocktail'
-      responses:
-        200:
-          description: |-
+        204:
+          description: No results found.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Cocktail'
-        409:
-          description: Cocktail with this name already exist
+                $ref: '#/components/schemas/EmptyList'
+        406:
+          description: There is a error in the filter attributes.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Cocktail'
+                $ref: '#/components/schemas/Error406'
   /cocktails/{cocktailId}:
+    parameters:
+      - $ref: '#/components/parameters/cocktailId'
     get:
       tags:
         - cocktail
       summary: Get a cocktail by id
-      parameters:
-        - $ref: '#/components/parameters/cocktailId'
       responses:
         200:
           description: |-
@@ -51,26 +60,285 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Cocktail'
-    put:
+        404:
+          description: |-
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error404CocktailId'
+  /cocktails/{cocktailId}/cocktail_ingredients:
+    parameters:
+      - $ref: '#/components/parameters/cocktailId'
+    get:
       tags:
-        - cocktail
-      summary: Update a cocktail
-      parameters:
-        - $ref: '#/components/parameters/cocktailId'
+        - cocktail ingredient
+      summary: All needed cocktail ingredients
       responses:
         200:
           description: |-
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Cocktail'
+                $ref: '#/components/schemas/CocktailIngredients'
+        204:
+          description: No results found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmptyList'
+        404:
+          description: |-
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error404CocktailId'
+  /cocktail_ingredients/{cocktailIngredientId}:
+    parameters:
+      - $ref: '#/components/parameters/cocktailIngredientId'
+    get:
+      tags:
+        - cocktail ingredient
+      summary: Get a cocktail ingredient by id
+      responses:
+        200:
+          description: |-
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CocktailIngredient'
+        404:
+          description: |-
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error404CocktailIngredientId'
+  /cocktail_ingredients/{cocktailIngredientId}/ingredient:
+    parameters:
+      - $ref: '#/components/parameters/cocktailIngredientId'
+    get:
+      tags:
+        - ingredient
+      summary: Specific ingrdient
+      responses:
+        200:
+          description: |-
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Ingredient'
+        204:
+          description: No result found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmptyObject'
+        404:
+          description: |-
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error404CocktailIngredientId'
+  /cocktail_ingredients/{cocktailIngredientId}/alternative_ingredients:
+    parameters:
+      - $ref: '#/components/parameters/cocktailIngredientId'
+    get:
+      tags:
+        - ingredient
+      summary: All alternative ingredients. Selected by ingreident categories.
+      responses:
+        200:
+          description: |-
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Ingredients'
+        204:
+          description: No results found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmptyList'
+        404:
+          description: |-
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error404CocktailIngredientId'
+  /ingredients:
+    get:
+      tags:
+        - ingredient
+      summary: List of all ingredients
+      responses:
+        200:
+          description: |-
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Ingredients'
+        204:
+          description: No results found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmptyList'
+  /ingredients/{ingredientId}:
+    parameters:
+      - $ref: '#/components/parameters/ingredientId'
+    get:
+      tags:
+        - ingredient
+      summary: Get a ingredient by id
+      responses:
+        200:
+          description: |-
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Ingredient'
+        404:
+          description: |-
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error404IngredientId'
+  /cocktails/{cocktailId}/making_steps:
+    parameters:
+      - $ref: '#/components/parameters/cocktailId'
+    get:
+      tags:
+        - making step
+      summary: Get the making steps
+      responses:
+        200:
+          description: |-
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MakingSteps'
+        204:
+          description: No results found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmptyList'
+        404:
+          description: |-
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error404CocktailId'
+  /cocktails/{cocktailId}/image:
+    parameters:
+      - $ref: '#/components/parameters/cocktailId'
+    get:
+      tags:
+        - image
+      summary: Get the image of the cocktail
+      responses:
+        200:
+          description: |-
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Image'
+        204:
+          description: No result found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmptyObject'
+        404:
+          description: |-
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error404CocktailId'
+  /ingredients/{ingredientId}/image:
+    parameters:
+      - $ref: '#/components/parameters/ingredientId'
+    get:
+      tags:
+        - image
+      summary: Get the image of the ingredient
+      responses:
+        200:
+          description: |-
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Image'
+        204:
+          description: No result found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmptyObject'
+        404:
+          description: |-
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error404IngredientId'
+  /cocktails/{cocktailId}/rating:
+    parameters:
+      - $ref: '#/components/parameters/cocktailId'
+    get:
+      tags:
+        - rating
+      summary: Get the rating for the cocktail
+      responses:
+        200:
+          description: |-
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Rating'
+        204:
+          description: No result found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmptyObject'
+        404:
+          description: |-
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error404CocktailId'
+  /ingredients/{ingredientId}/rating:
+    parameters:
+      - $ref: '#/components/parameters/ingredientId'
+    get:
+      tags:
+        - rating
+      summary: Get the rating for the ingredient
+      responses:
+        200:
+          description: |-
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Rating'
+        204:
+          description: No result found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmptyObject'
+        404:
+          description: |-
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error404IngredientId'
   /cocktails/{cocktailId}/glass:
+    parameters:
+      - $ref: '#/components/parameters/cocktailId'
     get:
       tags:
         - glass
       summary: Get the glass for the cocktail
-      parameters:
-        - $ref: '#/components/parameters/cocktailId'
       responses:
         200:
           description: |-
@@ -79,72 +347,59 @@ paths:
               schema:
                 $ref: '#/components/schemas/Glass'
         204:
-          description: Cocktail has no glass defined
-    post:
-      tags:
-        - glass
-      summary: Add a glass to a cocktail
-      parameters:
-        - $ref: '#/components/parameters/cocktailId'
-      requestBody:
-        $ref: '#/components/requestBodies/addGlass'
-      responses:
-        200:
-          description: Glass successfully added
+          description: No result found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Glass'
-        412:
-          description: There is already a glass defined
-    put:
-      tags:
-        - glass
-      summary: Update the cocktail glass
-      parameters:
-        - $ref: '#/components/parameters/cocktailId'
-      requestBody:
-        $ref: '#/components/requestBodies/addGlass'
-      responses:
-        200:
+                $ref: '#/components/schemas/EmptyObject'
+        404:
           description: |-
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Glass'
-        406:
-          description: Undefined glass type
-  /glasses:
+                $ref: '#/components/schemas/Error404CocktailId'
+  /cocktail_ingredients/{cocktailIngredientId}/unit:
+    parameters:
+      - $ref: '#/components/parameters/cocktailIngredientId'
     get:
       tags:
-        - glass
-      summary: Get a list of all glasses
+        - unit
+      summary: Get the unit of the cocktail ingredient
       responses:
         200:
           description: |-
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Glasses'
-    post:
+                $ref: '#/components/schemas/Unit'
+  /cocktails/{cocktailId}/category:
+    parameters:
+      - $ref: '#/components/parameters/cocktailId'
+    get:
       tags:
-        - glass
-      summary: Create a new glass
-      requestBody:
-        $ref: '#/components/requestBodies/createGlass'
+        - category
+      summary: Cocktail category
       responses:
         200:
           description: |-
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Glass'
-        409:
-          description: Glas already exist
+                $ref: '#/components/schemas/CocktailCategory'
+  /ingredients/{ingredientId}/categories:
+    parameters:
+      - $ref: '#/components/parameters/ingredientId'
+    get:
+      tags:
+        - category
+      summary: Ingredient categories
+      responses:
+        200:
+          description: |-
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Glass'
+                $ref: '#/components/schemas/IngredientCategories'
 
 components:
   schemas:
@@ -168,20 +423,9 @@ components:
           $ref: '#/components/schemas/DateTime'
         updated:
           $ref: '#/components/schemas/DateTime'
-        image:
-          $ref: '#/components/schemas/Image'
-        rating:
-          $ref: '#/components/schemas/Rating'
-        category:
-          $ref: '#/components/schemas/CocktailCategory'
-        ingredients:
-          $ref: '#/components/schemas/CocktailIngredients'
-        makingSteps:
-          $ref: '#/components/schemas/MakingSteps'
     DateTime:
       type: string
       format: date-time
-      example: 2020-03-01 23:42:09
     Glass:
       type: object
       properties:
@@ -198,8 +442,10 @@ components:
           $ref: '#/components/schemas/StringBase64'
         filename:
           type: string
+          example: wiskey_sour
         extension:
           type: string
+          example: png
     Rating:
       type: object
       properties:
@@ -207,8 +453,12 @@ components:
           $ref: '#/components/schemas/Id'
         stars:
           type: integer
+          example: 5
+          maximum: 5
+          minimum: 0
         description:
           type: string
+          example: The raw awesomeness
     CocktailCategory:
       type: object
       properties:
@@ -227,16 +477,11 @@ components:
           $ref: '#/components/schemas/Id'
         quantity:
           type: string
+          example: 1/2
         created:
           $ref: '#/components/schemas/DateTime'
         updated:
           $ref: '#/components/schemas/DateTime'
-        unit:
-          $ref: '#/components/schemas/Unit'
-        ingredient:
-          $ref: '#/components/schemas/Ingredient'
-        alternativeIngredients:
-          $ref: '#/components/schemas/Ingredients'
     Unit:
       type: object
       properties:
@@ -247,6 +492,7 @@ components:
     StringBase64:
       type: string
       format: byte
+      example: Base64 string
     Ingredients:
       type: array
       items:
@@ -258,20 +504,17 @@ components:
           $ref: '#/components/schemas/Id'
         name:
           type: string
+          example: Makers Mark
         producer:
           type: string
+          example: Maker's Mark Distillery
         description:
           type: string
+          example: Maker's Mark is a small-batch bourbon whiskey produced in Loretto, Kentucky, by Beam Suntory.
         created:
           $ref: '#/components/schemas/DateTime'
         updated:
           $ref: '#/components/schemas/DateTime'
-        image:
-          $ref: '#/components/schemas/Image'
-        rating:
-          $ref: '#/components/schemas/Rating'
-        categories:
-          $ref: '#/components/schemas/IngredientCategories'
     IngredientCategories:
       type: array
       items:
@@ -306,13 +549,53 @@ components:
       type: integer
       format: int64
       example: 42
-    Glasses:
-      type: array
-      items:
-        $ref: '#/components/schemas/Glass'
     GlassType:
       type: string
       example: HIGHBALL
+    EmptyList:
+      type: array
+      items:
+        type: string
+      example: []
+    Error406:
+      type: object
+      properties:
+        attribute:
+          type: string
+          example: category
+        errorMessage:
+          type: string
+          example: The category "APPLE" does not exist.
+    Error404CocktailId:
+      type: object
+      properties:
+        attribute:
+          type: string
+          example: cocktailId
+        errorMessage:
+          type: string
+          example: The cocktail id "42" not exist.
+    Error404CocktailIngredientId:
+      type: object
+      properties:
+        attribute:
+          type: string
+          example: cocktailIngredientId
+        errorMessage:
+          type: string
+          example: The cocktail ingredient id "42" not exist.
+    EmptyObject:
+      type: object
+    Error404IngredientId:
+      type: object
+      properties:
+        attribute:
+          type: string
+          example: ingredientId
+        errorMessage:
+          type: string
+          example: The ingredient id "42" not exist.
+
   parameters:
     cocktailId:
       name: cocktailId
@@ -321,35 +604,85 @@ components:
       required: true
       schema:
         $ref: '#/components/schemas/Id'
-  requestBodies:
-    addGlass:
-      content:
-        application/json:
-          schema:
-            properties:
-              id:
-                $ref: '#/components/schemas/Id'
-    createGlass:
-      content:
-        application/json:
-          schema:
-            properties:
-              type:
-                $ref: '#/components/schemas/GlassType'
-    createCocktail:
-      content:
-        application/json:
-          schema:
-            properties:
-              name:
-                type: string
-                example: 'Gin Tonic'
-              description:
-                type: string
-              create:
-                $ref: '#/components/schemas/DateTime'
-              updated:
-                $ref: '#/components/schemas/DateTime'
+    cocktailIngredientId:
+      name: cocktailIngredientId
+      in: path
+      description: Unique id of a cocktail ingredient
+      required: true
+      schema:
+        $ref: '#/components/schemas/Id'
+    ingredientId:
+      name: ingredientId
+      in: path
+      description: Unique id of a ingredient
+      required: true
+      schema:
+        $ref: '#/components/schemas/Id'
+    filterCocktailsByNames:
+      name: names
+      in: query
+      description: Filter all cocktails with the given names. Filter also on phonetic identical names. Case insensitive. Names linked by "or".
+      required: false
+      schema:
+        type: string
+        example: 'Whisky Sauer,Gin Tonic'
+    filterCocktailsByCategories:
+      name: categories
+      in: query
+      description: Filter all cocktails with the given categories. Case insensitive. Categories linked by "or".
+      required: false
+      schema:
+        type: string
+        example: Highball,Cocktail
+    filterCocktailsByIngredients:
+      name: ingredients
+      in: query
+      description: Filter all cocktails with the given ingredient names. Filter also on phonetic identical names. Case insensitive. Names linked by "and".
+      required: false
+      schema:
+        type: string
+        example: Makers Mark,Lemon,Eis
+    filterCocktailsByIngredientCategories:
+      name: ingredient_categories
+      in: query
+      description: Filter all cocktails with the given ingredient categories. Case insensitive. Categories linked by "or".
+      required: false
+      schema:
+        type: string
+        example: Whisky,Gin
+    filterCocktailsByRatingGte:
+      name: rating[gte]
+      in: query
+      description: Filter the cocktails with a rating greater than equal the given parameter.
+      required: false
+      schema:
+        type: integer
+        example: 2
+    filterCocktailsByRatingLte:
+      name: rating[lte]
+      in: query
+      description: Filter the cocktails with a rating less than equal the given parameter.
+      required: false
+      schema:
+        type: integer
+        example: 4
+    filterCocktailsByGlass:
+      name: glass
+      in: query
+      description: Filter the cocktails with the given glass.
+      required: false
+      schema:
+        type: string
+        example: Tumbler
+    randomCocktails:
+      name: random
+      in: query
+      description: Picks one random cocktail with the given filters.
+      required: false
+      schema:
+        type: boolean
+        example: true
+
 tags:
   - name: cocktail
     description: Cocktail
@@ -357,8 +690,8 @@ tags:
     description: Cocktail Ingredient
   - name: ingredient
     description: Ingredient
-  - name: cocktail category
-    description: Cocktail Category
+  - name: making step
+    description: Making Step
   - name: image
     description: Image
   - name: rating
@@ -367,6 +700,6 @@ tags:
     description: Glass
   - name: unit
     description: Unit
-  - name: making step
-    description: Making Step
+  - name: category
+    description: Category
 
