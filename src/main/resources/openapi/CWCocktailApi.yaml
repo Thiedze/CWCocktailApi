@@ -29,23 +29,11 @@ paths:
         - $ref: '#/components/parameters/randomCocktails'
       responses:
         200:
-          description: |-
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Cocktails'
+          $ref: '#/components/responses/200Cocktails'
         204:
-          description: No results found.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/EmptyList'
+          $ref: '#/components/responses/204List'
         406:
-          description: There is a error in the filter attributes.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error406'
+          $ref: '#/components/responses/406Cocktails'
   /cocktails/{cocktailId}:
     parameters:
       - $ref: '#/components/parameters/cocktailId'
@@ -55,17 +43,9 @@ paths:
       summary: Get a cocktail by id
       responses:
         200:
-          description: |-
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Cocktail'
+          $ref: '#/components/responses/200Cocktail'
         404:
-          description: |-
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error404CocktailId'
+          $ref: '#/components/responses/404CocktailId'
   /cocktails/{cocktailId}/cocktail_ingredients:
     parameters:
       - $ref: '#/components/parameters/cocktailId'
@@ -75,23 +55,11 @@ paths:
       summary: All needed cocktail ingredients
       responses:
         200:
-          description: |-
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CocktailIngredients'
+          $ref: '#/components/responses/200CocktailIngredients'
         204:
-          description: No results found.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/EmptyList'
+          $ref: '#/components/responses/204List'
         404:
-          description: |-
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error404CocktailId'
+          $ref: '#/components/responses/404CocktailId'
   /cocktail_ingredients/{cocktailIngredientId}:
     parameters:
       - $ref: '#/components/parameters/cocktailIngredientId'
@@ -101,17 +69,9 @@ paths:
       summary: Get a cocktail ingredient by id
       responses:
         200:
-          description: |-
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CocktailIngredient'
+          $ref: '#/components/responses/200CocktailIngredient'
         404:
-          description: |-
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error404CocktailIngredientId'
+          $ref: '#/components/responses/404CocktailIngredientId'
   /cocktail_ingredients/{cocktailIngredientId}/ingredient:
     parameters:
       - $ref: '#/components/parameters/cocktailIngredientId'
@@ -121,23 +81,11 @@ paths:
       summary: Specific ingrdient
       responses:
         200:
-          description: |-
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Ingredient'
+          $ref: '#/components/responses/200Ingredient'
         204:
-          description: No result found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/EmptyObject'
+          $ref: '#/components/responses/204Object'
         404:
-          description: |-
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error404CocktailIngredientId'
+          $ref: '#/components/responses/404CocktailIngredientId'
   /cocktail_ingredients/{cocktailIngredientId}/alternative_ingredients:
     parameters:
       - $ref: '#/components/parameters/cocktailIngredientId'
@@ -147,23 +95,11 @@ paths:
       summary: All alternative ingredients. Selected by ingreident categories.
       responses:
         200:
-          description: |-
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Ingredients'
+          $ref: '#/components/responses/200Ingredients'
         204:
-          description: No results found.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/EmptyList'
+          $ref: '#/components/responses/204List'
         404:
-          description: |-
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error404CocktailIngredientId'
+          $ref: '#/components/responses/404CocktailIngredientId'
   /ingredients:
     get:
       tags:
@@ -177,11 +113,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Ingredients'
         204:
-          description: No results found.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/EmptyList'
+          $ref: '#/components/responses/204List'
   /ingredients/{ingredientId}:
     parameters:
       - $ref: '#/components/parameters/ingredientId'
@@ -191,17 +123,9 @@ paths:
       summary: Get a ingredient by id
       responses:
         200:
-          description: |-
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Ingredient'
+          $ref: '#/components/responses/200Ingredient'
         404:
-          description: |-
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error404IngredientId'
+          $ref: '#/components/responses/404IngredientId'
   /cocktails/{cocktailId}/making_steps:
     parameters:
       - $ref: '#/components/parameters/cocktailId'
@@ -211,23 +135,11 @@ paths:
       summary: Get the making steps
       responses:
         200:
-          description: |-
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MakingSteps'
+          $ref: '#/components/responses/200MakingSteps'
         204:
-          description: No results found.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/EmptyList'
+          $ref: '#/components/responses/204List'
         404:
-          description: |-
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error404CocktailId'
+          $ref: '#/components/responses/404CocktailId'
   /cocktails/{cocktailId}/image:
     parameters:
       - $ref: '#/components/parameters/cocktailId'
@@ -237,23 +149,11 @@ paths:
       summary: Get the image of the cocktail
       responses:
         200:
-          description: |-
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Image'
+          $ref: '#/components/responses/200Image'
         204:
-          description: No result found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/EmptyObject'
+          $ref: '#/components/responses/204Object'
         404:
-          description: |-
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error404CocktailId'
+          $ref: '#/components/responses/404CocktailId'
   /ingredients/{ingredientId}/image:
     parameters:
       - $ref: '#/components/parameters/ingredientId'
@@ -263,23 +163,11 @@ paths:
       summary: Get the image of the ingredient
       responses:
         200:
-          description: |-
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Image'
+          $ref: '#/components/responses/200Image'
         204:
-          description: No result found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/EmptyObject'
+          $ref: '#/components/responses/204Object'
         404:
-          description: |-
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error404IngredientId'
+          $ref: '#/components/responses/404IngredientId'
   /cocktails/{cocktailId}/rating:
     parameters:
       - $ref: '#/components/parameters/cocktailId'
@@ -289,23 +177,11 @@ paths:
       summary: Get the rating for the cocktail
       responses:
         200:
-          description: |-
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Rating'
+          $ref: '#/components/responses/200Rating'
         204:
-          description: No result found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/EmptyObject'
+          $ref: '#/components/responses/204Object'
         404:
-          description: |-
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error404CocktailId'
+          $ref: '#/components/responses/404CocktailId'
   /ingredients/{ingredientId}/rating:
     parameters:
       - $ref: '#/components/parameters/ingredientId'
@@ -315,23 +191,11 @@ paths:
       summary: Get the rating for the ingredient
       responses:
         200:
-          description: |-
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Rating'
+          $ref: '#/components/responses/200Rating'
         204:
-          description: No result found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/EmptyObject'
+          $ref: '#/components/responses/204Object'
         404:
-          description: |-
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error404IngredientId'
+          $ref: '#/components/responses/404IngredientId'
   /cocktails/{cocktailId}/glass:
     parameters:
       - $ref: '#/components/parameters/cocktailId'
@@ -341,23 +205,21 @@ paths:
       summary: Get the glass for the cocktail
       responses:
         200:
-          description: |-
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Glass'
+          $ref: '#/components/responses/200Glass'
         204:
-          description: No result found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/EmptyObject'
+          $ref: '#/components/responses/204Object'
         404:
-          description: |-
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error404CocktailId'
+          $ref: '#/components/responses/404CocktailId'
+  /glasses:
+    get:
+      tags:
+        - glass
+      summary: List of all glasses
+      responses:
+        200:
+          $ref: '#/components/responses/200Glasses'
+        204:
+          $ref: '#/components/responses/204List'
   /cocktail_ingredients/{cocktailIngredientId}/unit:
     parameters:
       - $ref: '#/components/parameters/cocktailIngredientId'
@@ -367,11 +229,21 @@ paths:
       summary: Get the unit of the cocktail ingredient
       responses:
         200:
-          description: |-
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Unit'
+          $ref: '#/components/responses/200Unit'
+        204:
+          $ref: '#/components/responses/204Object'
+        404:
+          $ref: '#/components/responses/404CocktailIngredientId'
+  /units:
+    get:
+      tags:
+        - unit
+      summary: List of all units
+      responses:
+        200:
+          $ref: '#/components/responses/200Units'
+        204:
+          $ref: '#/components/responses/204List'
   /cocktails/{cocktailId}/category:
     parameters:
       - $ref: '#/components/parameters/cocktailId'
@@ -381,11 +253,11 @@ paths:
       summary: Cocktail category
       responses:
         200:
-          description: |-
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CocktailCategory'
+          $ref: '#/components/responses/200CocktailCategory'
+        204:
+          $ref: '#/components/responses/204Object'
+        404:
+          $ref: '#/components/responses/404CocktailId'
   /ingredients/{ingredientId}/categories:
     parameters:
       - $ref: '#/components/parameters/ingredientId'
@@ -395,11 +267,9 @@ paths:
       summary: Ingredient categories
       responses:
         200:
-          description: |-
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/IngredientCategories'
+          $ref: '#/components/responses/200IngredientsCategories'
+        204:
+          $ref: '#/components/responses/204List'
 
 components:
   schemas:
@@ -423,9 +293,6 @@ components:
           $ref: '#/components/schemas/DateTime'
         updated:
           $ref: '#/components/schemas/DateTime'
-    DateTime:
-      type: string
-      format: date-time
     Glass:
       type: object
       properties:
@@ -466,6 +333,7 @@ components:
           $ref: '#/components/schemas/Id'
         type:
           type: string
+          example: TIKI
     CocktailIngredients:
       type: array
       items:
@@ -489,6 +357,7 @@ components:
           $ref: '#/components/schemas/Id'
         type:
           type: string
+          example: cl
     StringBase64:
       type: string
       format: byte
@@ -526,6 +395,7 @@ components:
           $ref: '#/components/schemas/Id'
         type:
           type: string
+          example: WHISKEY
     MakingSteps:
       type: array
       items:
@@ -552,12 +422,15 @@ components:
     GlassType:
       type: string
       example: HIGHBALL
-    EmptyList:
+    Units:
       type: array
       items:
-        type: string
-      example: []
-    Error406:
+        $ref: '#/components/schemas/Unit'
+    Glasses:
+      type: array
+      items:
+        $ref: '#/components/schemas/Glass'
+    406Error:
       type: object
       properties:
         attribute:
@@ -566,7 +439,7 @@ components:
         errorMessage:
           type: string
           example: The category "APPLE" does not exist.
-    Error404CocktailId:
+    404ErrorCocktailId:
       type: object
       properties:
         attribute:
@@ -575,7 +448,7 @@ components:
         errorMessage:
           type: string
           example: The cocktail id "42" not exist.
-    Error404CocktailIngredientId:
+    404ErrorCocktailIngredientId:
       type: object
       properties:
         attribute:
@@ -584,9 +457,7 @@ components:
         errorMessage:
           type: string
           example: The cocktail ingredient id "42" not exist.
-    EmptyObject:
-      type: object
-    Error404IngredientId:
+    404ErrorIngredientId:
       type: object
       properties:
         attribute:
@@ -595,6 +466,16 @@ components:
         errorMessage:
           type: string
           example: The ingredient id "42" not exist.
+    EmptyObject:
+      type: object
+    EmptyList:
+      type: array
+      items:
+        $ref: '#/components/schemas/EmptyObject'
+      example: []
+    DateTime:
+      type: string
+      format: date-time
 
   parameters:
     cocktailId:
@@ -683,6 +564,133 @@ components:
         type: boolean
         example: true
 
+  responses:
+    204Object:
+      description: No result found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/EmptyObject'
+    204List:
+      description: No results found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/EmptyList'
+    404CocktailId:
+      description: |-
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/404ErrorCocktailId'
+    404CocktailIngredientId:
+      description: |-
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/404ErrorCocktailIngredientId'
+    404IngredientId:
+      description: |-
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/404ErrorIngredientId'
+    200Cocktail:
+      description: |-
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Cocktail'
+    200Cocktails:
+      description: |-
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Cocktails'
+    200CocktailIngredient:
+      description: |-
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CocktailIngredient'
+    200CocktailIngredients:
+      description: |-
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CocktailIngredients'
+    200Ingredient:
+      description: |-
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Ingredient'
+    200Ingredients:
+      description: |-
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Ingredients'
+    200MakingSteps:
+      description: |-
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/MakingSteps'
+    200Image:
+      description: |-
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Image'
+    200Rating:
+      description: |-
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Rating'
+    200Glass:
+      description: |-
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Glass'
+    200Glasses:
+      description: |-
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Glasses'
+    200Unit:
+      description: |-
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Unit'
+    200Units:
+      description: |-
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Units'
+    200CocktailCategory:
+      description: |-
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CocktailCategory'
+    200IngredientsCategories:
+      description: |-
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/IngredientCategories'
+    406Cocktails:
+      description: There is a error in the filter attributes.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/406Error'
 tags:
   - name: cocktail
     description: Cocktail
