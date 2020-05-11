@@ -4,7 +4,7 @@ info:
   description: CWCocktailAPI
   version: 0.0.0.1
 servers:
-  - url: 'https://github.com/Thiedze/CWCocktailApi'
+  - url: ''
 paths:
   /cocktails:
     get:
@@ -23,7 +23,7 @@ paths:
         - cocktail
       summary: Add a new cocktail
       requestBody:
-        $ref: '#/components/requestBodies/cocktail'
+        $ref: '#/components/requestBodies/createCocktail'
       responses:
         200:
           description: |-
@@ -84,6 +84,8 @@ paths:
       tags:
         - glass
       summary: Add a glass to a cocktail
+      parameters:
+        - $ref: '#/components/parameters/cocktailId'
       requestBody:
         $ref: '#/components/requestBodies/addGlass'
       responses:
@@ -99,6 +101,8 @@ paths:
       tags:
         - glass
       summary: Update the cocktail glass
+      parameters:
+        - $ref: '#/components/parameters/cocktailId'
       requestBody:
         $ref: '#/components/requestBodies/addGlass'
       responses:
@@ -125,7 +129,7 @@ paths:
     post:
       tags:
         - glass
-      summary: Add a new glass
+      summary: Create a new glass
       requestBody:
         $ref: '#/components/requestBodies/createGlass'
       responses:
@@ -141,7 +145,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Glass'
-
 
 components:
   schemas:
@@ -165,8 +168,6 @@ components:
           $ref: '#/components/schemas/DateTime'
         updated:
           $ref: '#/components/schemas/DateTime'
-        glass:
-          $ref: '#/components/schemas/Glass'
         image:
           $ref: '#/components/schemas/Image'
         rating:
@@ -335,9 +336,37 @@ components:
             properties:
               type:
                 $ref: '#/components/schemas/GlassType'
-    cocktail:
+    createCocktail:
+      content:
+        application/json:
+          schema:
+            properties:
+              name:
+                type: string
+                example: 'Gin Tonic'
+              description:
+                type: string
+              create:
+                $ref: '#/components/schemas/DateTime'
+              updated:
+                $ref: '#/components/schemas/DateTime'
 tags:
   - name: cocktail
     description: Cocktail
+  - name: cocktail ingredient
+    description: Cocktail Ingredient
+  - name: ingredient
+    description: Ingredient
+  - name: cocktail category
+    description: Cocktail Category
+  - name: image
+    description: Image
+  - name: rating
+    description: Rating
   - name: glass
     description: Glass
+  - name: unit
+    description: Unit
+  - name: making step
+    description: Making Step
+
