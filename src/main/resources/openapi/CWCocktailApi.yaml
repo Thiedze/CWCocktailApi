@@ -7,12 +7,15 @@ info:
     <div>New cocktails are added by the owner at the moment. Feel free to propose a new cocktail via a github comment.</div>
     <div>In a future release it could be possible that other user can add cocktails.</div>
   version: 0.0.0.1
+servers:
+  - url: http://localhost/v1
 paths:
   /cocktails:
     get:
       tags:
         - cocktail
       summary: List of all cocktails. Filter are possible.
+      operationId: cocktails
       parameters:
         - $ref: '#/components/parameters/filterCocktailsByNames'
         - $ref: '#/components/parameters/filterCocktailsByCategories'
@@ -36,6 +39,7 @@ paths:
       tags:
         - cocktail
       summary: Get a cocktail by id
+      operationId: cocktail
       responses:
         200:
           $ref: '#/components/responses/200Cocktail'
@@ -48,6 +52,7 @@ paths:
       tags:
         - cocktail ingredient
       summary: All needed cocktail ingredients
+      operationId: cocktailIngredients
       responses:
         200:
           $ref: '#/components/responses/200CocktailIngredients'
@@ -62,6 +67,7 @@ paths:
       tags:
         - cocktail ingredient
       summary: Get a cocktail ingredient by id
+      operationId: cocktailIngredient
       responses:
         200:
           $ref: '#/components/responses/200CocktailIngredient'
@@ -73,7 +79,8 @@ paths:
     get:
       tags:
         - ingredient
-      summary: Specific ingrdient
+      summary: Specific ingredient
+      operationId: ingredientFromCocktailIngredient
       responses:
         200:
           $ref: '#/components/responses/200Ingredient'
@@ -87,7 +94,8 @@ paths:
     get:
       tags:
         - ingredient
-      summary: All alternative ingredients. Selected by ingreident categories.
+      summary: All alternative ingredients. Selected by ingredient categories.
+      operationId: alternativeIngredients
       responses:
         200:
           $ref: '#/components/responses/200Ingredients'
@@ -100,6 +108,7 @@ paths:
       tags:
         - ingredient
       summary: List of all ingredients
+      operationId: ingredients
       responses:
         200:
           description: |-
@@ -116,6 +125,7 @@ paths:
       tags:
         - ingredient
       summary: Get a ingredient by id
+      operationId: ingredient
       responses:
         200:
           $ref: '#/components/responses/200Ingredient'
@@ -128,6 +138,7 @@ paths:
       tags:
         - making step
       summary: Get the making steps
+      operationId: makingSteps
       responses:
         200:
           $ref: '#/components/responses/200MakingSteps'
@@ -142,6 +153,7 @@ paths:
       tags:
         - image
       summary: Get the image of the cocktail
+      operationId: cocktailImage
       responses:
         200:
           $ref: '#/components/responses/200Image'
@@ -156,6 +168,7 @@ paths:
       tags:
         - image
       summary: Get the image of the ingredient
+      operationId: ingredientImage
       responses:
         200:
           $ref: '#/components/responses/200Image'
@@ -170,6 +183,7 @@ paths:
       tags:
         - rating
       summary: Get the rating for the cocktail
+      operationId: cocktailRating
       responses:
         200:
           $ref: '#/components/responses/200Rating'
@@ -184,6 +198,7 @@ paths:
       tags:
         - rating
       summary: Get the rating for the ingredient
+      operationId: ingredientRating
       responses:
         200:
           $ref: '#/components/responses/200Rating'
@@ -198,6 +213,7 @@ paths:
       tags:
         - glass
       summary: Get the glass for the cocktail
+      operationId: glass
       responses:
         200:
           $ref: '#/components/responses/200Glass'
@@ -210,6 +226,7 @@ paths:
       tags:
         - glass
       summary: List of all glasses
+      operationId: glasses
       responses:
         200:
           $ref: '#/components/responses/200Glasses'
@@ -222,6 +239,7 @@ paths:
       tags:
         - unit
       summary: Get the unit of the cocktail ingredient
+      operationId: unit
       responses:
         200:
           $ref: '#/components/responses/200Unit'
@@ -234,6 +252,7 @@ paths:
       tags:
         - unit
       summary: List of all units
+      operationId: units
       responses:
         200:
           $ref: '#/components/responses/200Units'
@@ -247,7 +266,8 @@ paths:
     get:
       tags:
         - unit
-      summary: Convert one unit to another one.
+      summary: Convert one unit to another one
+      operationId: unitConverter
       responses:
         200:
           $ref: '#/components/responses/200UnitConvert'
@@ -260,6 +280,7 @@ paths:
       tags:
         - category
       summary: Cocktail category
+      operationId: cocktailCategory
       responses:
         200:
           $ref: '#/components/responses/200CocktailCategory'
@@ -274,6 +295,7 @@ paths:
       tags:
         - category
       summary: Ingredient categories
+      operationId: ingredientCategory
       responses:
         200:
           $ref: '#/components/responses/200IngredientsCategories'
@@ -462,7 +484,7 @@ components:
         result:
           type: number
           example: 4.678
-    404ErrorCocktailId:
+    Error404CocktailId:
       type: object
       properties:
         attribute:
@@ -471,7 +493,7 @@ components:
         errorMessage:
           type: string
           example: The cocktail id "42" not exist.
-    404ErrorCocktailIngredientId:
+    Error404CocktailIngredientId:
       type: object
       properties:
         attribute:
@@ -480,7 +502,7 @@ components:
         errorMessage:
           type: string
           example: The cocktail ingredient id "42" not exist.
-    404ErrorIngredientId:
+    Error404IngredientId:
       type: object
       properties:
         attribute:
@@ -489,7 +511,7 @@ components:
         errorMessage:
           type: string
           example: The ingredient id "42" not exist.
-    406ErrorCocktailCategory:
+    Error406CocktailCategory:
       type: object
       properties:
         attribute:
@@ -498,7 +520,7 @@ components:
         errorMessage:
           type: string
           example: The category "APPLE" does not exist.
-    406ErrorUnitConvert:
+    Error406UnitConvert:
       type: object
       properties:
         attribute:
@@ -635,19 +657,19 @@ components:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/404ErrorCocktailId'
+            $ref: '#/components/schemas/Error404CocktailId'
     404CocktailIngredientId:
       description: |-
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/404ErrorCocktailIngredientId'
+            $ref: '#/components/schemas/Error404CocktailIngredientId'
     404IngredientId:
       description: |-
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/404ErrorIngredientId'
+            $ref: '#/components/schemas/Error404IngredientId'
     200Cocktail:
       description: |-
       content:
@@ -743,7 +765,7 @@ components:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/406ErrorCocktailCategory'
+            $ref: '#/components/schemas/Error406CocktailCategory'
     200UnitConvert:
       description: |-
       content:
@@ -755,7 +777,7 @@ components:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/406ErrorUnitConvert'
+            $ref: '#/components/schemas/Error406UnitConvert'
 tags:
   - name: cocktail
     description: Cocktail

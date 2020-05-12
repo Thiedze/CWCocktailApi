@@ -20,6 +20,39 @@
     <java.version>1.8</java.version>
   </properties>
 
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <artifactId>openapi-generator-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <configuration>
+              <additionalProperties>
+                interfaceOnly=true
+              </additionalProperties>
+
+              <apiPackage>de.cw.cwcocktailapi.controller.v1.api</apiPackage>
+
+              <generatorName>spring</generatorName>
+              <inputSpec>${project.basedir}/src/main/resources/openapi/CWCocktailApi.yaml</inputSpec>
+              <modelNameSuffix>Dto</modelNameSuffix>
+              <modelPackage>de.cw.cwcocktailapi.controller.v1.model</modelPackage>
+            </configuration>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+          </execution>
+        </executions>
+        <groupId>org.openapitools</groupId>
+        <version>3.3.4</version>
+      </plugin>
+    </plugins>
+  </build>
+
   <dependencies>
     <!-- SPRING -->
     <dependency>
@@ -64,15 +97,26 @@
       <groupId>mysql</groupId>
       <version>8.0.20</version>
     </dependency>
+    <dependency>
+      <artifactId>swagger-parser</artifactId>
+      <groupId>io.swagger.parser.v3</groupId>
+      <version>2.0.19</version>
+    </dependency>
+    <dependency>
+      <artifactId>springfox-swagger2</artifactId>
+      <groupId>io.springfox</groupId>
+      <version>2.9.2</version>
+    </dependency>
+    <dependency>
+      <artifactId>springfox-swagger-ui</artifactId>
+      <groupId>io.springfox</groupId>
+      <version>2.9.2</version>
+    </dependency>
+    <dependency>
+      <artifactId>persistence-api</artifactId>
+      <groupId>javax.persistence</groupId>
+      <version>1.0.2</version>
+    </dependency>
   </dependencies>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-maven-plugin</artifactId>
-      </plugin>
-    </plugins>
-  </build>
 
 </project>
