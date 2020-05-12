@@ -424,10 +424,6 @@ components:
           $ref: '#/components/schemas/DateTime'
         language:
           type: string
-    Id:
-      type: integer
-      format: int64
-      example: 42
     GlassType:
       type: string
       example: HIGHBALL
@@ -449,6 +445,10 @@ components:
     DateTime:
       type: string
       format: date-time
+    Id:
+      type: integer
+      format: int64
+      example: 42
     Convert:
       type: object
       properties:
