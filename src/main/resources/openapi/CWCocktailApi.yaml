@@ -2,15 +2,10 @@ openapi: 3.0.0
 info:
   title: CWCocktailAPI
   description:
-    <span>This is the specification of an open source cocktail api.</span>
-    <br>
-    <br>
-    <h4>Every getter is free to use.</h4>
-    <br>
-    <span>New cocktails are added by the owner at the moment. Feel free to propose a new cocktail via a github comment.</span>
-    <br>
-    <br>
-    <span>In a future release it could be possible that other user can add cocktails.</span> <br>
+    <div>This is the specification of an open source cocktail api.</div>
+    <h5>Every getter is free to use.</h5>
+    <div>New cocktails are added by the owner at the moment. Feel free to propose a new cocktail via a github comment.</div>
+    <div>In a future release it could be possible that other user can add cocktails.</div>
   version: 0.0.0.1
 paths:
   /cocktails:
@@ -244,6 +239,20 @@ paths:
           $ref: '#/components/responses/200Units'
         204:
           $ref: '#/components/responses/204List'
+  /units/{unitId}/convert:
+    parameters:
+      - $ref: '#/components/parameters/unitId'
+      - $ref: '#/components/parameters/convertUnitTo'
+      - $ref: '#/components/parameters/convertUnitAmount'
+    get:
+      tags:
+        - unit
+      summary: Convert one unit to another one.
+      responses:
+        200:
+          $ref: '#/components/responses/200UnitConvert'
+        406:
+          $ref: '#/components/responses/406UnitConvert'
   /cocktails/{cocktailId}/category:
     parameters:
       - $ref: '#/components/parameters/cocktailId'
@@ -430,15 +439,29 @@ components:
       type: array
       items:
         $ref: '#/components/schemas/Glass'
-    406Error:
+    EmptyObject:
+      type: object
+    EmptyList:
+      type: array
+      items:
+        $ref: '#/components/schemas/EmptyObject'
+      example: []
+    DateTime:
+      type: string
+      format: date-time
+    Convert:
       type: object
       properties:
-        attribute:
-          type: string
-          example: category
-        errorMessage:
-          type: string
-          example: The category "APPLE" does not exist.
+        from:
+          $ref: '#/components/schemas/Unit'
+        to:
+          $ref: '#/components/schemas/Unit'
+        amount:
+          type: number
+          example: 2.45
+        result:
+          type: number
+          example: 4.678
     404ErrorCocktailId:
       type: object
       properties:
@@ -466,16 +489,24 @@ components:
         errorMessage:
           type: string
           example: The ingredient id "42" not exist.
-    EmptyObject:
+    406ErrorCocktailCategory:
       type: object
-    EmptyList:
-      type: array
-      items:
-        $ref: '#/components/schemas/EmptyObject'
-      example: []
-    DateTime:
-      type: string
-      format: date-time
+      properties:
+        attribute:
+          type: string
+          example: category
+        errorMessage:
+          type: string
+          example: The category "APPLE" does not exist.
+    406ErrorUnitConvert:
+      type: object
+      properties:
+        attribute:
+          type: string
+          example: to
+        errorMessage:
+          type: string
+          example: Converting to cl not possible
 
   parameters:
     cocktailId:
@@ -563,6 +594,28 @@ components:
       schema:
         type: boolean
         example: true
+    unitId:
+      name: unitId
+      in: path
+      description: Unique id of a unit
+      required: true
+      schema:
+        $ref: '#/components/schemas/Id'
+    convertUnitTo:
+      name: to
+      in: query
+      description: Unit name to convert to
+      required: true
+      schema:
+        type: string
+        example: cl
+    convertUnitAmount:
+      name: amount
+      in: query
+      description: Amount to convert as float
+      schema:
+        type: number
+        example: 2.45
 
   responses:
     204Object:
@@ -690,7 +743,19 @@ components:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/406Error'
+            $ref: '#/components/schemas/406ErrorCocktailCategory'
+    200UnitConvert:
+      description: |-
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Convert'
+    406UnitConvert:
+      description: Converting not possible
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/406ErrorUnitConvert'
 tags:
   - name: cocktail
     description: Cocktail
