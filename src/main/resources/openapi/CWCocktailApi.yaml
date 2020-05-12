@@ -635,6 +635,7 @@ components:
       name: amount
       in: query
       description: Amount to convert as float
+      required: true
       schema:
         type: number
         example: 2.45

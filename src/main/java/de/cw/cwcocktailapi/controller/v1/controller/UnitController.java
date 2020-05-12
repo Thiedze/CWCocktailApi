@@ -15,7 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class UnitController implements de.cw.cwcocktailapi.controller.v1.api.UnitsApi {
 
   @Override
-  public ResponseEntity<ConvertDto> unitConverter(Long unitId, @NotNull @Valid String to, @Valid BigDecimal amount) {
+  public ResponseEntity<ConvertDto> unitConverter(Long unitId, @NotNull @Valid String to,
+      @NotNull @Valid BigDecimal amount) {
     return null;
   }
 
@@ -23,5 +24,4 @@ public class UnitController implements de.cw.cwcocktailapi.controller.v1.api.Uni
   public ResponseEntity<List<UnitDto>> units() {
     return null;
   }
-
 }
