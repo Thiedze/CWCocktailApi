@@ -27,26 +27,44 @@
         <artifactId>spring-boot-maven-plugin</artifactId>
       </plugin>
       <plugin>
-        <artifactId>openapi-generator-maven-plugin</artifactId>
         <executions>
           <execution>
             <configuration>
-              <additionalProperties>
-                interfaceOnly=true
-              </additionalProperties>
-
-              <apiPackage>de.cw.cwcocktailapi.controller.v1.api</apiPackage>
-
-              <generatorName>spring</generatorName>
               <inputSpec>${project.basedir}/src/main/resources/openapi/CWCocktailApi.yaml</inputSpec>
-              <modelNameSuffix>Dto</modelNameSuffix>
+              <apiPackage>de.cw.cwcocktailapi.controller.v1.api</apiPackage>
+              <configOptions>
+                <dateLibrary>java8</dateLibrary>
+                <interfaceOnly>true</interfaceOnly>
+                <java8>true</java8>
+                <library>spring-mvc</library>
+                <performBeanValidation>true</performBeanValidation>
+                <sourceFolder>src/gen/java/main</sourceFolder>
+                <useBeanValidation>true</useBeanValidation>
+              </configOptions>
+
+              <generateApiDocumentation>false</generateApiDocumentation>
+
+              <generateApiTests>false</generateApiTests>
+              <generateApis>true</generateApis>
+              <generateModelTests>false</generateModelTests>
+              <generatorName>spring</generatorName>
+
               <modelPackage>de.cw.cwcocktailapi.controller.v1.model</modelPackage>
+              <ignoreFileOverride>${project.basedir}/src/main/resources/openapi/.openapi-generator-ignore
+              </ignoreFileOverride>
+              <modelNameSuffix>Dto</modelNameSuffix>
+
+              <output>target/generated-sources</output>
             </configuration>
             <goals>
               <goal>generate</goal>
             </goals>
+            <id>openapi-generator-generate</id>
+
+            <phase>generate-sources</phase>
           </execution>
         </executions>
+        <artifactId>openapi-generator-maven-plugin</artifactId>
         <groupId>org.openapitools</groupId>
         <version>3.3.4</version>
       </plugin>
@@ -103,19 +121,9 @@
       <version>2.0.19</version>
     </dependency>
     <dependency>
-      <artifactId>springfox-swagger2</artifactId>
-      <groupId>io.springfox</groupId>
-      <version>2.9.2</version>
-    </dependency>
-    <dependency>
-      <artifactId>springfox-swagger-ui</artifactId>
-      <groupId>io.springfox</groupId>
-      <version>2.9.2</version>
-    </dependency>
-    <dependency>
-      <artifactId>persistence-api</artifactId>
-      <groupId>javax.persistence</groupId>
-      <version>1.0.2</version>
+      <artifactId>jackson-databind-nullable</artifactId>
+      <groupId>org.openapitools</groupId>
+      <version>0.1.0</version>
     </dependency>
   </dependencies>
 
