@@ -1,7 +1,7 @@
 git:
   data:
     url: https://raw.githubusercontent.com/Thiedze/CWCocktailApi/master/data
-    filldatabase: true
+    filldatabase: false
 datasource:
   url: jdbc:mysql://sql343.your-server.de:3306/cocktail?serverTimezone=Europe/Berlin
   username: cocktail
