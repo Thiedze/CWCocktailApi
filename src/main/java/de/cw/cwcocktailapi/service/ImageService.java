@@ -17,7 +17,7 @@ public class ImageService {
       ResponseEntity<SearchResponseDto> response = restTemplate.getForEntity(url, SearchResponseDto.class);
       imageUrls = Objects.requireNonNull(response.getBody()).getData().getResult().getItems().stream()
           .map(SearchItemDto::getMedia).collect(Collectors.toList());
-    } catch (Exception exception) {
+    } catch (ExceptionDto exception) {
       return imageUrls;
     }*/
     return imageUrls;

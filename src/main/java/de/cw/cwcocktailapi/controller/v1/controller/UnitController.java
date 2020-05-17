@@ -1,5 +1,6 @@
 package de.cw.cwcocktailapi.controller.v1.controller;
 
+import de.cw.cwcocktailapi.controller.v1.mapper.UnitConvertMapper;
 import de.cw.cwcocktailapi.controller.v1.mapper.UnitMapper;
 import de.cw.cwcocktailapi.controller.v1.model.ConvertDto;
 import de.cw.cwcocktailapi.controller.v1.model.UnitDto;
@@ -26,12 +27,14 @@ public class UnitController implements de.cw.cwcocktailapi.controller.v1.api.Uni
   @Override
   public ResponseEntity<ConvertDto> unitConverter(Long unitId, @NotNull @Valid String to,
       @NotNull @Valid BigDecimal amount) {
-    return null;
+    ConvertDto convertDto = UnitConvertMapper.MAPPER.convert(unitService.convert(unitId, to, amount));
+    return new ResponseEntity<>(convertDto, HttpStatus.OK);
   }
 
   @Override
   public ResponseEntity<List<UnitDto>> units() {
-    return new ResponseEntity<>(UnitMapper.MAPPER.convert(unitService.units()), HttpStatus.OK);
+    List<UnitDto> units = UnitMapper.MAPPER.convert(unitService.units());
+    return new ResponseEntity<>(units, HttpStatus.OK);
   }
 
 }

@@ -271,6 +271,8 @@ paths:
       responses:
         200:
           $ref: '#/components/responses/200UnitConvert'
+        404:
+          $ref: '#/components/responses/404UnitConvert'
         406:
           $ref: '#/components/responses/406UnitConvert'
   /cocktails/{cocktailId}/category:
@@ -511,6 +513,15 @@ components:
         errorMessage:
           type: string
           example: The ingredient id "42" not exist.
+    Error404UnitConvert:
+      type: object
+      properties:
+        attribute:
+          type: string
+          example: unitId
+        errorMessage:
+          type: string
+          example: The unit id "42" not exist.
     Error406CocktailCategory:
       type: object
       properties:
@@ -779,6 +790,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/Error406UnitConvert'
+    404UnitConvert:
+      description: Resource not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error404UnitConvert'
 tags:
   - name: cocktail
     description: Cocktail
