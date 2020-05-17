@@ -24,6 +24,8 @@ public class UnitConvertService {
     switch (unitConvert.getTo().getType()) {
       case ML:
         return unitConvert.getAmount();
+      case CL:
+        return unitConvert.getAmount().divide(BigDecimal.valueOf(10), 2, RoundingMode.CEILING);
       case L:
         return unitConvert.getAmount().divide(BigDecimal.valueOf(1000), 2, RoundingMode.CEILING);
       default:
@@ -35,6 +37,8 @@ public class UnitConvertService {
     switch (unitConvert.getTo().getType()) {
       case CL:
         return unitConvert.getAmount();
+      case ML:
+        return unitConvert.getAmount().multiply(BigDecimal.valueOf(10));
       case L:
         return unitConvert.getAmount().divide(BigDecimal.valueOf(100), 2, RoundingMode.CEILING);
       default:
