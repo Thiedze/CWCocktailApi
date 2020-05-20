@@ -90,5 +90,12 @@ class UnitServiceTest {
       assertEquals("type", exception.getAttribute());
     }
 
+    try {
+      unitConvert = unitService.convert(0L, "UNKNOWN", BigDecimal.valueOf(2.4));
+      assertNotNull(unitConvert);
+    } catch (ResourceNotFoundException exception) {
+      assertEquals("type", exception.getAttribute());
+    }
+
   }
 }
