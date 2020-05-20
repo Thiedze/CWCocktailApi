@@ -24,7 +24,7 @@ public class CocktailSearch {
   private Boolean random;
 
   private List<String> convertToList(String valuesAsString) {
-    if (names != null) {
+    if (valuesAsString != null) {
       return Arrays.asList(valuesAsString.split(","));
     } else {
       return null;
