@@ -72,7 +72,7 @@ public class JpaConfiguration {
   }
 
   @Bean
-  public Boolean doFillDatabase() {
+  public boolean doFillDatabase() {
     return doFillDatabase;
   }
 
