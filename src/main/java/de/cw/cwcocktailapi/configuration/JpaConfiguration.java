@@ -28,7 +28,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 public class JpaConfiguration {
 
   @Value("${git.data.filldatabase}")
-  private Boolean doFillDatabase;
+  private boolean doFillDatabase;
 
   @Primary
   @Bean(name = "entityManagerFactory")

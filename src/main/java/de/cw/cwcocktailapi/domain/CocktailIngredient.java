@@ -37,9 +37,6 @@ public class CocktailIngredient {
   private Cocktail cocktail;
 
   @Transient
-  private Long ingredient_id;
-
-  @Transient
   private List<Ingredient> alternativeIngredients;
 
 }

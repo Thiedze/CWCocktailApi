@@ -10,10 +10,10 @@ import org.springframework.http.HttpStatus;
 @AllArgsConstructor
 public class CwCocktailApiException extends RuntimeException {
 
-  private String attribute;
+  private final String attribute;
 
-  private String errorMessage;
+  private final String errorMessage;
 
-  private HttpStatus httpStatus;
+  private final HttpStatus httpStatus;
 
 }

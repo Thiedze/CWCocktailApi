@@ -12,7 +12,6 @@ public class RestResponseEntityExceptionHandler extends ResponseEntityExceptionH
 
   @ExceptionHandler({CwCocktailApiException.class})
   public ResponseEntity<Object> handleCimRestExceptionV4(CwCocktailApiException exception) {
-    // LogService.warning(exception);
     return new ResponseEntity<>(new ExceptionDto(exception.getAttribute(), exception.getErrorMessage()),
         exception.getHttpStatus());
   }

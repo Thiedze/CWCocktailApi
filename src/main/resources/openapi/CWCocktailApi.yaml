@@ -323,9 +323,9 @@ components:
           type: string
           example: There’s a simple structure behind all sours, a family of citrus-based cocktails.
         created:
-          $ref: '#/components/schemas/DateTime'
+          $ref: '#/components/schemas/Date'
         updated:
-          $ref: '#/components/schemas/DateTime'
+          $ref: '#/components/schemas/Date'
     Glass:
       type: object
       properties:
@@ -380,9 +380,9 @@ components:
           type: string
           example: 1/2
         created:
-          $ref: '#/components/schemas/DateTime'
+          $ref: '#/components/schemas/Date'
         updated:
-          $ref: '#/components/schemas/DateTime'
+          $ref: '#/components/schemas/Date'
     Unit:
       type: object
       properties:
@@ -414,9 +414,9 @@ components:
           type: string
           example: Maker's Mark is a small-batch bourbon whiskey produced in Loretto, Kentucky, by Beam Suntory.
         created:
-          $ref: '#/components/schemas/DateTime'
+          $ref: '#/components/schemas/Date'
         updated:
-          $ref: '#/components/schemas/DateTime'
+          $ref: '#/components/schemas/Date'
     IngredientCategories:
       type: array
       items:
@@ -443,9 +443,9 @@ components:
         position:
           type: integer
         created:
-          $ref: '#/components/schemas/DateTime'
+          $ref: '#/components/schemas/Date'
         updated:
-          $ref: '#/components/schemas/DateTime'
+          $ref: '#/components/schemas/Date'
         language:
           type: string
     GlassType:
@@ -466,9 +466,9 @@ components:
       items:
         $ref: '#/components/schemas/EmptyObject'
       example: []
-    DateTime:
+    Date:
       type: string
-      format: date-time
+      format: date
     Id:
       type: integer
       format: int64
