@@ -74,7 +74,7 @@ class UnitServiceTest {
       unit = unitService.unit(1L);
       assertNotNull(unit);
     } catch (ResourceNotFoundException exception) {
-      assertEquals(exception.getAttribute(), "unitId");
+      assertEquals("unitId", exception.getAttribute());
     }
   }
 
@@ -87,7 +87,7 @@ class UnitServiceTest {
       unitConvert = unitService.convert(0L, "OZ", BigDecimal.valueOf(2.4));
       assertNotNull(unitConvert);
     } catch (ResourceNotFoundException exception) {
-      assertEquals(exception.getAttribute(), "type");
+      assertEquals("type", exception.getAttribute());
     }
 
   }
