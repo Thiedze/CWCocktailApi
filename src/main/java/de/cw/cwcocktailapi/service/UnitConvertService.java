@@ -23,11 +23,11 @@ public class UnitConvertService {
   private BigDecimal convertML(UnitConvert unitConvert) {
     switch (unitConvert.getTo().getType()) {
       case ML:
-        return unitConvert.getAmount();
+        return scale(unitConvert.getAmount());
       case CL:
-        return unitConvert.getAmount().divide(BigDecimal.valueOf(10), 2, RoundingMode.CEILING);
+        return divide(unitConvert.getAmount(), BigDecimal.valueOf(10));
       case L:
-        return unitConvert.getAmount().divide(BigDecimal.valueOf(1000), 2, RoundingMode.CEILING);
+        return divide(unitConvert.getAmount(), BigDecimal.valueOf(1000));
       default:
         throw new NotAcceptableException("to", "Converting to " + unitConvert.getTo().getType() + " not possible");
     }
@@ -37,15 +37,23 @@ public class UnitConvertService {
   private BigDecimal convertCL(UnitConvert unitConvert) {
     switch (unitConvert.getTo().getType()) {
       case CL:
-        return unitConvert.getAmount();
+        return scale(unitConvert.getAmount());
       case ML:
-        return unitConvert.getAmount().multiply(BigDecimal.valueOf(10));
+        return scale(unitConvert.getAmount().multiply(BigDecimal.valueOf(10)));
       case L:
-        return unitConvert.getAmount().divide(BigDecimal.valueOf(100), 2, RoundingMode.CEILING);
+        return divide(unitConvert.getAmount(), BigDecimal.valueOf(100));
       default:
         throw new NotAcceptableException("to", "Converting to " + unitConvert.getTo().getType() + " not possible");
     }
 
+  }
+
+  private BigDecimal scale(BigDecimal value) {
+    return value.setScale(2, RoundingMode.HALF_UP);
+  }
+
+  private BigDecimal divide(BigDecimal value, BigDecimal divider) {
+    return value.divide(divider, 2, RoundingMode.HALF_UP);
   }
 
 }
