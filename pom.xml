@@ -68,7 +68,7 @@
           </execution>
         </executions>
         <groupId>org.openapitools</groupId>
-        <version>3.3.4</version>
+        <version>5.1.0</version>
       </plugin>
 
     </plugins>
